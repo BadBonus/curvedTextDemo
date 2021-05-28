@@ -95,19 +95,13 @@
         // });
 
         let arrayLetters = document.querySelectorAll("#test3 span");
-        calculatingPosition(arrayLetters, -150);
+        calculatingPosition(arrayLetters, -150, 5, -140);
 
         function degToRad(deg) {
             return (Math.PI * deg) / 180;
         }
 
-        function calculatingPosition(
-            arrayElements,
-            trsy1,
-            trsyCenter,
-            trsy2,
-            customPos
-        ) {
+        function calculatingPosition(arrayElements, trsy1, posJump, trsy2) {
             if (!arrayElements.length) {
                 console.log("Вставьте массив узлов страницы");
                 return false;
@@ -116,13 +110,28 @@
             let middle = Math.round(arrayElements.length / 2);
             let gradOnEl = 90 / (countOfLetters + 1);
 
-            if (trsyCenter) {} else {
+            if (posJump && !trsy2) {
+                arrayElements.forEach((element, index) => {
+                    const height =
+                        index > posJump ?
+                        arrayElements[posJump - 1].style.top.replace("px", "") :
+                        trsy1 * Math.sin(180 + degToRad(index * gradOnEl));
+                    element.style.top = `${height}px`;
+                });
+            } else if (posJump && trsy2) {
+                arrayElements.forEach((element, index) => {
+                    let partOfGlad = gradOnEl / 2;
+                    const height =
+                        index > posJump ?
+                        trsy2 * Math.sin(180 + degToRad(index * gradOnEl)) :
+                        trsy1 * Math.sin(180 + degToRad(index * gradOnEl));
+                    element.style.top = `${height}px`;
+                });
+
+                element.style.top = `${height}px`;
+            } else {
                 arrayElements.forEach((element, index) => {
                     const height = trsy1 * Math.sin(180 + degToRad(index * gradOnEl));
-                    console.log(element);
-                    console.log(height);
-
-                    element.style.position = "relative";
                     element.style.top = `${height}px`;
                 });
             }
