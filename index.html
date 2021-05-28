@@ -127,8 +127,6 @@
                         trsy1 * Math.sin(180 + degToRad(index * gradOnEl));
                     element.style.top = `${height}px`;
                 });
-
-                element.style.top = `${height}px`;
             } else {
                 arrayElements.forEach((element, index) => {
                     const height = trsy1 * Math.sin(180 + degToRad(index * gradOnEl));
@@ -140,6 +138,20 @@
             //   element.style.transform = "rotate(90deg)";
             // });
         }
+
+        // calculationingRotate(arrayLetters, 100);
+
+        // function calculationingRotate(arrayLetters, radius) {
+        //     let textlength = arrayLetters[0].parentElement.offsetWidth;
+
+        //     var circleLength = 2 * Math.PI * radius;
+
+        //     arrayLetters.forEach((element, idx) => {
+        //         element.style.transform = `rotate(${
+        //     idx * angle - (textlength * angle) / 2
+        //   }deg)`;
+        //     });
+        // }
 
         // textPath = text.path("M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80");
 
