@@ -22,7 +22,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            transform-origin: bottom center;
+            transform-origin: center;
             position: relative;
         }
         
@@ -95,7 +95,7 @@
         // });
 
         let arrayLetters = document.querySelectorAll("#test3 span");
-        calculatingPosition(arrayLetters, -150, 5, -140);
+        calculatingPosition(arrayLetters, -150, 5);
 
         function degToRad(deg) {
             return (Math.PI * deg) / 180;
@@ -139,19 +139,42 @@
             // });
         }
 
-        // calculationingRotate(arrayLetters, 100);
+        // ----
 
-        // function calculationingRotate(arrayLetters, radius) {
-        //     let textlength = arrayLetters[0].parentElement.offsetWidth;
+        // var w = $curvedText.width();
+        // var text = $curvedText.text();
 
-        //     var circleLength = 2 * Math.PI * radius;
+        // var circleLength = 2 * Math.PI * radius;
+        // var angleRad = w/(2*radius);
+        // var angle = 2 * angleRad * 180/Math.PI/text.length;
 
-        //     arrayLetters.forEach((element, idx) => {
-        //         element.style.transform = `rotate(${
-        //     idx * angle - (textlength * angle) / 2
-        //   }deg)`;
-        //     });
-        // }
+        // transform:`translate(${w/2}px,0px) rotate(${idx * angle - text.length*angle/2}deg)`
+
+        // ----
+
+        calculationingRotate(arrayLetters, 150, 5);
+
+        function calculationingRotate(arrayLetters, radius, posJump) {
+            let w = arrayLetters[0].parentElement.offsetWidth;
+
+            var circleLength = 2 * Math.PI * radius;
+            var angleRad = w / (2 * radius);
+            var angle = (2 * angleRad * 180) / Math.PI / arrayLetters.length;
+
+            arrayLetters.forEach((element, idx) => {
+                if (posJump) {
+                    if (idx < posJump) {
+                        element.style.transform = `rotate(${
+                (idx * angle - (arrayLetters.length * angle) / 2) * -1
+              }deg)`;
+                    }
+                } else {
+                    element.style.transform = `rotate(${
+              (idx * angle - (arrayLetters.length * angle) / 2) * -1
+            }deg)`;
+                }
+            });
+        }
 
         // textPath = text.path("M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80");
 
