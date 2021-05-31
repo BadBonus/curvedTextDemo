@@ -175,6 +175,18 @@
                 }
             });
         }
+        calculatingSkew(arrayLetters, 150, 5);
+
+        function calculatingSkew(arrayLetters, powerOfSkew, posJump) {
+            // arrayLetters[0].style.transform = arrayLetters[0].style.transform + ` skew(-20deg)`
+            if (posJump) {
+                if (idx < posJump) {
+                    element.style.transform = element.style.transform + ` skew(-20deg)`;
+                }
+            } else {
+                element.style.transform = element.style.transform + ` skew(-20deg)`;
+            }
+        }
 
         // textPath = text.path("M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80");
 

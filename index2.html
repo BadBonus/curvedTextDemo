@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./anime.js"></script>
+    <style>
+        h1 {
+            position: relative;
+            margin-top: 55px;
+        }
+        
+        span {
+            display: inline-block;
+            font: 26px Monaco, MonoSpace;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform-origin: center;
+            position: relative;
+        }
+        
+        h1 {
+            text-align: center;
+            margin: auto;
+            margin-top: 22vw;
+            width: 220px;
+            position: absolute;
+            left: 200px;
+            text-transform: uppercase;
+        }
+        
+        h1:first-child {
+            margin-top: 20vw;
+        }
+        
+        .card {
+            overflow: hidden;
+            width: 300px;
+            height: 600px;
+            background-color: lightcoral;
+        }
+        
+        .el {
+            width: 28px;
+            height: 28px;
+            background: gray;
+            border-radius: 14px;
+            display: block;
+        }
+        
+        .card__textCard {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <input type="range" min="0" max="5" id="speed" value="1" step="0.01" /> -->
+    <img src="https://reachandtarget-my.sharepoint.com/personal/olga_reachandtarget_com/Documents/%D0%A4%D0%B0%D0%B9%D0%BB%D1%8B%20%D1%87%D0%B0%D1%82%D0%BE%D0%B2%20Microsoft%20Teams/2021-05-26%2023.10.58.jpg" alt="" />
+    <!-- <h1 id="test">1234567890</h1>
+    <h1 id="test2">на спорт!</h1> -->
+    <br />
+    <div class="card">
+        <img src="./1.png" alt="" class="card__image" />
+        <div class="card__textCard">
+            <span>Д</span>
+            <span>Е</span>
+            <span>Л</span>
+            <span>А</span>
+            <span>Й</span>
+
+            <span>С</span>
+            <span>Т</span>
+            <span>А</span>
+            <span>В</span>
+            <span>К</span>
+            <span>И</span>
+        </div>
+    </div>
+    <script>
+        // var rotate = 0.5;
+        // let isUp = true;
+
+        // // const x = anime({
+        // //     targets: ".card__image",
+        // //     rotate: "1turn",
+        // //     easing: "linear",
+        // //     loop: true,
+        // //     duration: 1500,
+        // //     loopComplete: function(anim) {
+        // //         console.log(x);
+        // //         // rotate++;
+        // //         // anim.rotate = `${rotate}turn`;
+        // //     },
+        // // });
+        // var animation = anime({
+        //     targets: ".card__image",
+        //     rotate: "1turn",
+        //     loop: true,
+        //     easing: "linear",
+        //     autoplay: false,
+        //     loopComplete: function(anim) {},
+        // });
+
+        // function loop(t) {
+        //     // if (rotate >= 100) isUp = false;
+        //     // console.log(rotate);
+        //     // if (isUp) {
+        //     //     rotate += 0.5;
+        //     //     animation.tick((t + rotate + rotate * rotate) / 2);
+        //     // } else {
+        //     //     rotate -= 0.5;
+        //     //     animation.tick((t - rotate + rotate * rotate) / 2);
+        //     // }
+        //     if (rotate > 100) {
+        //         status = "down";
+        //     }
+        //     if (rotate < 1) {
+        //         status = "up";
+        //     }
+
+        //     if (status === "up") {
+        //         rotate += 1;
+        //     }
+        //     if (status === "down") {
+        //         rotate -= 1;
+        //     }
+        //     console.log(Math.round(t + t / rotate));
+        //     animation.tick(Math.round(t + t / rotate));
+        //     customRAF = requestAnimationFrame(loop);
+        // }
+
+        // requestAnimationFrame(loop);
+
+        let changeNumber = 0;
+        let status = "up";
+        let numberSlide = 2;
+
+        class TimeMagic {
+            constructor(speed) {
+                this.accumulateTime = -1;
+                this.lastTime = -1;
+                this.speed = speed;
+            }
+
+            updateTime(t) {
+                if (this.accumulateTime === -1) {
+                    this.accumulateTime = t;
+                } else {
+                    const deltaT = t - this.lastTime;
+                    this.accumulateTime += deltaT * this.speed;
+                }
+
+                this.lastTime = t;
+            }
+
+            updateSpeed(speed) {
+                this.speed = speed;
+            }
+
+            getTime() {
+                return this.accumulateTime;
+            }
+        }
+
+        window.setTimeout(() => {
+            // const $speed = document.querySelector("#speed");
+
+            const timeManager = new TimeMagic(1);
+
+            // $speed.addEventListener("change", (event) => {
+            //     timeManager.updateSpeed(parseFloat(event.target.value));
+            // });
+
+            // const animation = anime({
+            //     targets: ".tick-demo .el",
+            //     translateX: 270,
+            //     direction: "alternate",
+            //     loop: true,
+            //     easing: "easeInOutQuad",
+            //     autoplay: false,
+            // });
+
+            //     // --var2
+
+            //     const animation = anime({
+            //         targets: ".card__image",
+            //         rotate: "1turn",
+            //         loop: true,
+            //         easing: "linear",
+            //         autoplay: false,
+            //         duration: 800,
+            //         loopComplete: function(anim) {
+            //             if (status === "up") {
+            //                 changeNumber += 0.5;
+            //             }
+            //             if (status === "down") {
+            //                 changeNumber -= 0.5;
+            //             }
+            //             timeManager.updateSpeed(parseFloat(changeNumber));
+            //         },
+            //         loopBegin: function(anim) {
+            //             if (changeNumber >= 4) {
+            //                 status = "down";
+            //             }
+
+            //             switch (numberSlide) {
+            //                 case 1:
+            //                     document.querySelector(".card__image").src = "./2.png";
+            //                     break;
+            //                 case 2:
+            //                     document.querySelector(".card__image").src = "./3.png";
+            //                     break;
+            //                 case 3:
+            //                     document.querySelector(".card__image").src = "./4.png";
+            //                     break;
+            //                 case 4:
+            //                     document.querySelector(".card__image").src = "./5.png";
+            //                     break;
+
+            //                 default:
+            //                     break;
+            //             }
+            //         },
+            //     });
+
+            //     function loop(t) {
+            //         timeManager.updateTime(t);
+            //         animation.tick(timeManager.getTime());
+            //         requestAnimationFrame(loop);
+            //     }
+
+            //     requestAnimationFrame(loop);
+            // }, 0);
+
+            // // --var2
+
+            const animation = anime({
+                targets: ".card__image",
+                easing: "easeInOutSine",
+                loop: true,
+                direction: "normal",
+                autoplay: true,
+                duration: 800,
+                delay: () => 4000,
+                rotate: "1turn",
+
+                update: function(anim) {
+                    if (Math.round(anim.currentTime) >= 4400) {
+                        document.querySelector(
+                            ".card__image"
+                        ).src = `./${numberSlide}.png`;
+                    }
+                },
+                loopComplete: function() {
+                    if (numberSlide === 5) {
+                        numberSlide = 1;
+                    } else {
+                        numberSlide++;
+                    }
+                },
+            });
+        });
+    </script>
+</body>
+
+</html>
