@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
     <script src="./anime.js"></script>
     <style>
         h1 {
@@ -42,6 +41,7 @@
             width: 240px;
             height: 400px;
             background-color: #e84e10;
+            position: relative;
         }
         
         .el {
@@ -75,6 +75,14 @@
             position: relative;
             left: -25px;
         }
+        
+        .card__textCard {
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+        }
     </style>
 </head>
 
@@ -89,55 +97,13 @@
             <img src="./1.svg" alt="" class="card__image" />
         </div>
         <div class="card__textCard card__textCard1">
-            <span>Д</span>
-            <span>Е</span>
-            <span>Л</span>
-            <span>А</span>
-            <span>Й</span>
-
-            <span> </span>
-
-            <span>С</span>
-            <span>Т</span>
-            <span>А</span>
-            <span>В</span>
-            <span>К</span>
-            <span>И</span>
+            <img src="./11.svg" alt="" /><img src="./12.svg" alt="" />
         </div>
         <div class="card__textCard card__textCard2">
-            <span>И</span>
-            <span>Г</span>
-            <span>Р</span>
-            <span>А</span>
-            <span>Й</span>
-
-            <br />
-
-            <span>В</span>
-            <span> </span>
-            <span>П</span>
-            <span>О</span>
-            <span>К</span>
-            <span>Е</span>
-            <span>Р</span>
+            <img src="./21.svg" alt="" /><img src="./22.svg" alt="" />
         </div>
-
         <div class="card__textCard card__textCard3">
-            <span>X</span>
-            <span>X</span>
-            <span>X</span>
-            <span>X</span>
-            <span>X</span>
-
-            <br />
-
-            <span>Y</span>
-            <span>Y</span>
-            <span>Y</span>
-            <span>Y</span>
-            <span>Y</span>
-            <span>Y</span>
-            <span>Y</span>
+            <img src="./31.svg" alt="" /><img src="./32.svg" alt="" />
         </div>
     </div>
     <script>
@@ -343,7 +309,7 @@
             // --var3
             const textAnimations = [
                 anime({
-                    targets: ".card__textCard1 span",
+                    targets: ".card__textCard1 *",
                     easing: "easeInOutSine",
                     autoplay: false,
                     duration: 800,
@@ -367,9 +333,8 @@
                     update: function(anim) {},
                 }),
                 anime({
-                    targets: ".card__textCard2 span",
+                    targets: ".card__textCard2 *",
                     easing: "easeInOutSine",
-                    direction: "normal",
                     autoplay: false,
                     duration: 800,
                     opacity: [0, 10],
@@ -384,9 +349,8 @@
                     },
                 }),
                 anime({
-                    targets: ".card__textCard3 span",
+                    targets: ".card__textCard3 *",
                     easing: "easeInOutSine",
-                    direction: "normal",
                     autoplay: false,
                     duration: 800,
                     opacity: [0, 5],
