@@ -80,8 +80,37 @@
             position: absolute;
             right: 0;
             left: 0;
-            bottom: 0;
+            bottom: 52px;
             margin: auto;
+        }
+        
+        .card__textCard img {
+            position: relative;
+        }
+        
+        .card__textCard1 img:first-child {
+            width: 200px;
+        }
+        
+        .card__textCard1 img:last-child {
+            bottom: 14px;
+            width: 188px;
+        }
+        
+        .card__textCard3 {
+            left: -14px;
+            bottom: 64px;
+        }
+        
+        .card__textCard3 img:first-child {
+            width: 165px;
+            right: -2px;
+        }
+        
+        .card__textCard3 img:last-child {
+            width: 196px;
+            left: 19px;
+            bottom: 13px;
         }
     </style>
 </head>
@@ -96,12 +125,12 @@
         <div class="card__imgWrapper">
             <img src="./1.svg" alt="" class="card__image" />
         </div>
-        <div class="card__textCard card__textCard1">
+        <!-- <div class="card__textCard card__textCard1">
             <img src="./11.svg" alt="" /><img src="./12.svg" alt="" />
-        </div>
-        <div class="card__textCard card__textCard2">
+        </div> -->
+        <!-- <div class="card__textCard card__textCard2">
             <img src="./21.svg" alt="" /><img src="./22.svg" alt="" />
-        </div>
+        </div>-->
         <div class="card__textCard card__textCard3">
             <img src="./31.svg" alt="" /><img src="./32.svg" alt="" />
         </div>
@@ -307,70 +336,70 @@
                 },
             });
             // --var3
-            const textAnimations = [
-                anime({
-                    targets: ".card__textCard1 *",
-                    easing: "easeInOutSine",
-                    autoplay: false,
-                    duration: 800,
-                    rotate: "1turn",
-                    opacity: [0, 8],
-                    delay: function(el, i, l) {
-                        return i * 100;
-                    },
-                    translateX: function(...test) {
-                        return [anime.random(-50, 50), 0];
-                    },
-                    translateY: function(...test) {
-                        return [anime.random(-50, 50), 0];
-                    },
-                    direction: "alternate",
-                    // delay: 800,
-                    complete: function(anim) {
-                        // textAnimation2.play();
-                        // textAnimations[textAnimationNumber].play();
-                    },
-                    update: function(anim) {},
-                }),
-                anime({
-                    targets: ".card__textCard2 *",
-                    easing: "easeInOutSine",
-                    autoplay: false,
-                    duration: 800,
-                    opacity: [0, 10],
-                    direction: "alternate",
-                    // endDelay: 1000,
-                    delay: function(el, i, l) {
-                        return i * 100;
-                    },
-                    // endDelay: 5000,
-                    complete: function(anim) {
-                        // textAnimation3.play();
-                    },
-                }),
-                anime({
-                    targets: ".card__textCard3 *",
-                    easing: "easeInOutSine",
-                    autoplay: false,
-                    duration: 800,
-                    opacity: [0, 5],
-                    direction: "alternate",
-                    // endDelay: 1500,
-                    translateX: function(...test) {
-                        return [anime.random(-50, 50), 0];
-                    },
-                    translateY: function(...test) {
-                        return [anime.random(-50, 50), 0];
-                    },
-                    delay: function(el, i, l) {
-                        return i * 100;
-                    },
-                    // endDelay: 5000,
-                    complete: function(anim) {
-                        // textAnimation1.play();
-                    },
-                }),
-            ];
+            // const textAnimations = [
+            //     anime({
+            //         targets: ".card__textCard1 *",
+            //         easing: "easeInOutSine",
+            //         autoplay: false,
+            //         duration: 800,
+            //         rotate: "1turn",
+            //         opacity: [0, 8],
+            //         delay: function(el, i, l) {
+            //             return i * 100;
+            //         },
+            //         translateX: function(...test) {
+            //             return [anime.random(-50, 50), 0];
+            //         },
+            //         translateY: function(...test) {
+            //             return [anime.random(-50, 50), 0];
+            //         },
+            //         direction: "alternate",
+            //         // delay: 800,
+            //         complete: function(anim) {
+            //             // textAnimation2.play();
+            //             // textAnimations[textAnimationNumber].play();
+            //         },
+            //         update: function(anim) {},
+            //     }),
+            //     anime({
+            //         targets: ".card__textCard2 *",
+            //         easing: "easeInOutSine",
+            //         autoplay: false,
+            //         duration: 800,
+            //         opacity: [0, 10],
+            //         direction: "alternate",
+            //         // endDelay: 1000,
+            //         delay: function(el, i, l) {
+            //             return i * 100;
+            //         },
+            //         // endDelay: 5000,
+            //         complete: function(anim) {
+            //             // textAnimation3.play();
+            //         },
+            //     }),
+            //     anime({
+            //         targets: ".card__textCard3 *",
+            //         easing: "easeInOutSine",
+            //         autoplay: false,
+            //         duration: 800,
+            //         opacity: [0, 5],
+            //         direction: "alternate",
+            //         // endDelay: 1500,
+            //         translateX: function(...test) {
+            //             return [anime.random(-50, 50), 0];
+            //         },
+            //         translateY: function(...test) {
+            //             return [anime.random(-50, 50), 0];
+            //         },
+            //         delay: function(el, i, l) {
+            //             return i * 100;
+            //         },
+            //         // endDelay: 5000,
+            //         complete: function(anim) {
+            //             // textAnimation1.play();
+            //         },
+            //     }),
+            // ];
         });
     </script>
 </body>
