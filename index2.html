@@ -1,407 +1,422 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./anime.js"></script>
     <style>
-        h1 {
-            position: relative;
-            margin-top: 55px;
-        }
-        
-        span {
-            display: inline-block;
-            font: 26px Monaco, MonoSpace;
-            position: absolute;
-            left: 0;
-            top: 0;
-            transform-origin: center;
-            position: relative;
-        }
-        
-        h1 {
-            text-align: center;
-            margin: auto;
-            margin-top: 22vw;
-            width: 220px;
-            position: absolute;
-            left: 200px;
-            text-transform: uppercase;
-        }
-        
-        h1:first-child {
-            margin-top: 20vw;
-        }
-        
-        .card {
-            overflow: hidden;
-            width: 240px;
-            height: 400px;
-            background-color: #e84e10;
-            position: relative;
-        }
-        
-        .el {
-            width: 28px;
-            height: 28px;
-            background: gray;
-            border-radius: 14px;
-            display: block;
-        }
-        
-        .card__textCard {
-            text-align: center;
-        }
-        
-        .card__imgWrapper {
-            padding: 0;
-            box-shadow: 0 0 11px 0px #fff;
-            border-radius: 100px;
-            width: 160px;
-            margin: auto;
-            text-align: center;
-            height: 160px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 82px;
-        }
-        
-        .initImg {
-            width: 1271px;
-            position: relative;
-            left: -25px;
-        }
-        
-        .card__textCard {
-            position: absolute;
-            right: 0;
-            left: 0;
-            bottom: 52px;
-            margin: auto;
-        }
-        
-        .card__textCard img {
-            position: relative;
-        }
-        
-        .card__textCard1 img:first-child {
-            width: 200px;
-        }
-        
-        .card__textCard1 img:last-child {
-            bottom: 14px;
-            width: 188px;
-        }
-        
-        .card__textCard3 {
-            left: -14px;
-            bottom: 64px;
-        }
-        
-        .card__textCard3 img:first-child {
-            width: 165px;
-            right: -2px;
-        }
-        
-        .card__textCard3 img:last-child {
-            width: 196px;
-            left: 19px;
-            bottom: 13px;
-        }
-    </style>
-</head>
+      h1 {
+        position: relative;
+        margin-top: 55px;
+      }
 
-<body>
+      span {
+        display: inline-block;
+        font: 26px Monaco, MonoSpace;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform-origin: center;
+        position: relative;
+      }
+
+      h1 {
+        text-align: center;
+        margin: auto;
+        margin-top: 22vw;
+        width: 220px;
+        position: absolute;
+        left: 200px;
+        text-transform: uppercase;
+      }
+
+      h1:first-child {
+        margin-top: 20vw;
+      }
+
+      .card {
+        overflow: hidden;
+        width: 240px;
+        height: 400px;
+        background-color: #e84e10;
+        position: relative;
+      }
+
+      .el {
+        width: 28px;
+        height: 28px;
+        background: gray;
+        border-radius: 14px;
+        display: block;
+      }
+
+      .card__textCard {
+        text-align: center;
+      }
+
+      .card__imgWrapper {
+        padding: 0;
+        box-shadow: 0 0 11px 0px #fff;
+        border-radius: 100px;
+        width: 160px;
+        margin: auto;
+        text-align: center;
+        height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 82px;
+      }
+
+      .initImg {
+        width: 1271px;
+        position: relative;
+        left: -25px;
+      }
+
+      .card__textCard {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 52px;
+        margin: auto;
+      }
+
+      .card__textCard img {
+        position: relative;
+      }
+
+      .card__textCard1 img:first-child {
+        width: 200px;
+      }
+
+      .card__textCard1 img:last-child {
+        bottom: 14px;
+        width: 188px;
+      }
+      .card__textCard2 {
+        left: -33px;
+        bottom: 48px;
+      }
+      .card__textCard2 img:first-child {
+        width: 126px;
+        right: 25px;
+      }
+
+      .card__textCard2 img:last-child {
+        width: 180px;
+        bottom: 20px;
+      }
+
+      .card__textCard3 {
+        left: -14px;
+        bottom: 64px;
+      }
+
+      .card__textCard3 img:first-child {
+        width: 165px;
+        right: -2px;
+      }
+
+      .card__textCard3 img:last-child {
+        width: 196px;
+        left: 19px;
+        bottom: 13px;
+      }
+    </style>
+  </head>
+
+  <body>
     <!-- <input type="range" min="0" max="5" id="speed" value="1" step="0.01" /> -->
-    <img class="initImg" src="https://reachandtarget-my.sharepoint.com/personal/olga_reachandtarget_com/Documents/%D0%A4%D0%B0%D0%B9%D0%BB%D1%8B%20%D1%87%D0%B0%D1%82%D0%BE%D0%B2%20Microsoft%20Teams/2021-05-26%2023.10.58.jpg" alt="" />
+    <img
+      class="initImg"
+      src="https://reachandtarget-my.sharepoint.com/personal/olga_reachandtarget_com/Documents/%D0%A4%D0%B0%D0%B9%D0%BB%D1%8B%20%D1%87%D0%B0%D1%82%D0%BE%D0%B2%20Microsoft%20Teams/2021-05-26%2023.10.58.jpg"
+      alt=""
+    />
     <!-- <h1 id="test">1234567890</h1>
     <h1 id="test2">на спорт!</h1> -->
     <br />
     <div class="card">
-        <div class="card__imgWrapper">
-            <img src="./1.svg" alt="" class="card__image" />
-        </div>
-        <!-- <div class="card__textCard card__textCard1">
+      <div class="card__imgWrapper">
+        <img src="./1.svg" alt="" class="card__image" />
+      </div>
+      <!-- <div class="card__textCard card__textCard1">
             <img src="./11.svg" alt="" /><img src="./12.svg" alt="" />
         </div> -->
-        <!-- <div class="card__textCard card__textCard2">
-            <img src="./21.svg" alt="" /><img src="./22.svg" alt="" />
-        </div>-->
-        <div class="card__textCard card__textCard3">
+      <div class="card__textCard card__textCard2">
+        <img src="./21.svg" alt="" /><img src="./22.svg" alt="" />
+      </div>
+      <!-- <div class="card__textCard card__textCard3">
             <img src="./31.svg" alt="" /><img src="./32.svg" alt="" />
-        </div>
+        </div> -->
     </div>
     <script>
-        // var rotate = 0.5;
-        // let isUp = true;
+      // var rotate = 0.5;
+      // let isUp = true;
 
-        // // const x = anime({
-        // //     targets: ".card__image",
-        // //     rotate: "1turn",
-        // //     easing: "linear",
-        // //     loop: true,
-        // //     duration: 1500,
-        // //     loopComplete: function(anim) {
-        // //         console.log(x);
-        // //         // rotate++;
-        // //         // anim.rotate = `${rotate}turn`;
-        // //     },
-        // // });
-        // var animation = anime({
-        //     targets: ".card__image",
-        //     rotate: "1turn",
-        //     loop: true,
-        //     easing: "linear",
-        //     autoplay: false,
-        //     loopComplete: function(anim) {},
-        // });
+      // // const x = anime({
+      // //     targets: ".card__image",
+      // //     rotate: "1turn",
+      // //     easing: "linear",
+      // //     loop: true,
+      // //     duration: 1500,
+      // //     loopComplete: function(anim) {
+      // //         console.log(x);
+      // //         // rotate++;
+      // //         // anim.rotate = `${rotate}turn`;
+      // //     },
+      // // });
+      // var animation = anime({
+      //     targets: ".card__image",
+      //     rotate: "1turn",
+      //     loop: true,
+      //     easing: "linear",
+      //     autoplay: false,
+      //     loopComplete: function(anim) {},
+      // });
 
-        // function loop(t) {
-        //     // if (rotate >= 100) isUp = false;
-        //     // console.log(rotate);
-        //     // if (isUp) {
-        //     //     rotate += 0.5;
-        //     //     animation.tick((t + rotate + rotate * rotate) / 2);
-        //     // } else {
-        //     //     rotate -= 0.5;
-        //     //     animation.tick((t - rotate + rotate * rotate) / 2);
-        //     // }
-        //     if (rotate > 100) {
-        //         status = "down";
-        //     }
-        //     if (rotate <script 1) {
-        //         status = "up";
-        //     }
+      // function loop(t) {
+      //     // if (rotate >= 100) isUp = false;
+      //     // console.log(rotate);
+      //     // if (isUp) {
+      //     //     rotate += 0.5;
+      //     //     animation.tick((t + rotate + rotate * rotate) / 2);
+      //     // } else {
+      //     //     rotate -= 0.5;
+      //     //     animation.tick((t - rotate + rotate * rotate) / 2);
+      //     // }
+      //     if (rotate > 100) {
+      //         status = "down";
+      //     }
+      //     if (rotate <script 1) {
+      //         status = "up";
+      //     }
 
-        //     if (status === "up") {
-        //         rotate += 1;
-        //     }
-        //     if (status === "down") {
-        //         rotate -= 1;
-        //     }
-        //     console.log(Math.round(t + t / rotate));
-        //     animation.tick(Math.round(t + t / rotate));
-        //     customRAF = requestAnimationFrame(loop);
-        // }
+      //     if (status === "up") {
+      //         rotate += 1;
+      //     }
+      //     if (status === "down") {
+      //         rotate -= 1;
+      //     }
+      //     console.log(Math.round(t + t / rotate));
+      //     animation.tick(Math.round(t + t / rotate));
+      //     customRAF = requestAnimationFrame(loop);
+      // }
 
-        // requestAnimationFrame(loop);
+      // requestAnimationFrame(loop);
 
-        let changeNumber = 0;
-        let status = "up";
-        let numberSlide = 2;
-        let textAnimationNumber = 0;
+      let changeNumber = 0;
+      let status = "up";
+      let numberSlide = 2;
+      let textAnimationNumber = 0;
 
-        class TimeMagic {
-            constructor(speed) {
-                this.accumulateTime = -1;
-                this.lastTime = -1;
-                this.speed = speed;
-            }
-
-            updateTime(t) {
-                if (this.accumulateTime === -1) {
-                    this.accumulateTime = t;
-                } else {
-                    const deltaT = t - this.lastTime;
-                    this.accumulateTime += deltaT * this.speed;
-                }
-
-                this.lastTime = t;
-            }
-
-            updateSpeed(speed) {
-                this.speed = speed;
-            }
-
-            getTime() {
-                return this.accumulateTime;
-            }
+      class TimeMagic {
+        constructor(speed) {
+          this.accumulateTime = -1;
+          this.lastTime = -1;
+          this.speed = speed;
         }
 
-        window.setTimeout(() => {
-            // const $speed = document.querySelector("#speed");
+        updateTime(t) {
+          if (this.accumulateTime === -1) {
+            this.accumulateTime = t;
+          } else {
+            const deltaT = t - this.lastTime;
+            this.accumulateTime += deltaT * this.speed;
+          }
 
-            const timeManager = new TimeMagic(1);
+          this.lastTime = t;
+        }
 
-            // $speed.addEventListener("change", (event) => {
-            //     timeManager.updateSpeed(parseFloat(event.target.value));
-            // });
+        updateSpeed(speed) {
+          this.speed = speed;
+        }
 
-            // const animation = anime({
-            //     targets: ".tick-demo .el",
-            //     translateX: 270,
-            //     direction: "alternate",
-            //     loop: true,
-            //     easing: "easeInOutQuad",
-            //     autoplay: false,
-            // });
+        getTime() {
+          return this.accumulateTime;
+        }
+      }
 
-            //     // --var2
+      window.setTimeout(() => {
+        // const $speed = document.querySelector("#speed");
 
-            //     const animation = anime({
-            //         targets: ".card__image",
-            //         rotate: "1turn",
-            //         loop: true,
-            //         easing: "linear",
-            //         autoplay: false,
-            //         duration: 800,
-            //         loopComplete: function(anim) {
-            //             if (status === "up") {
-            //                 changeNumber += 0.5;
-            //             }
-            //             if (status === "down") {
-            //                 changeNumber -= 0.5;
-            //             }
-            //             timeManager.updateSpeed(parseFloat(changeNumber));
-            //         },
-            //         loopBegin: function(anim) {
-            //             if (changeNumber >= 4) {
-            //                 status = "down";
-            //             }
+        const timeManager = new TimeMagic(1);
 
-            //             switch (numberSlide) {
-            //                 case 1:
-            //                     document.querySelector(".card__image").src = "./2.png";
-            //                     break;
-            //                 case 2:
-            //                     document.querySelector(".card__image").src = "./3.png";
-            //                     break;
-            //                 case 3:
-            //                     document.querySelector(".card__image").src = "./4.png";
-            //                     break;
-            //                 case 4:
-            //                     document.querySelector(".card__image").src = "./5.png";
-            //                     break;
+        // $speed.addEventListener("change", (event) => {
+        //     timeManager.updateSpeed(parseFloat(event.target.value));
+        // });
 
-            //                 default:
-            //                     break;
-            //             }
-            //         },
-            //     });
+        // const animation = anime({
+        //     targets: ".tick-demo .el",
+        //     translateX: 270,
+        //     direction: "alternate",
+        //     loop: true,
+        //     easing: "easeInOutQuad",
+        //     autoplay: false,
+        // });
 
-            //     function loop(t) {
-            //         timeManager.updateTime(t);
-            //         animation.tick(timeManager.getTime());
-            //         requestAnimationFrame(loop);
-            //     }
+        //     // --var2
 
-            //     requestAnimationFrame(loop);
-            // }, 0);
+        //     const animation = anime({
+        //         targets: ".card__image",
+        //         rotate: "1turn",
+        //         loop: true,
+        //         easing: "linear",
+        //         autoplay: false,
+        //         duration: 800,
+        //         loopComplete: function(anim) {
+        //             if (status === "up") {
+        //                 changeNumber += 0.5;
+        //             }
+        //             if (status === "down") {
+        //                 changeNumber -= 0.5;
+        //             }
+        //             timeManager.updateSpeed(parseFloat(changeNumber));
+        //         },
+        //         loopBegin: function(anim) {
+        //             if (changeNumber >= 4) {
+        //                 status = "down";
+        //             }
 
-            // // --var2
+        //             switch (numberSlide) {
+        //                 case 1:
+        //                     document.querySelector(".card__image").src = "./2.png";
+        //                     break;
+        //                 case 2:
+        //                     document.querySelector(".card__image").src = "./3.png";
+        //                     break;
+        //                 case 3:
+        //                     document.querySelector(".card__image").src = "./4.png";
+        //                     break;
+        //                 case 4:
+        //                     document.querySelector(".card__image").src = "./5.png";
+        //                     break;
 
-            // --var3
-            const animation = anime({
-                targets: ".card__image",
-                easing: "easeInOutSine",
-                loop: true,
-                direction: "normal",
-                autoplay: true,
-                duration: 800,
-                delay: () => 6000,
-                rotate: "1turn",
+        //                 default:
+        //                     break;
+        //             }
+        //         },
+        //     });
 
-                update: function(anim) {
-                    if (Math.round(anim.progress) === 30) {
-                        textAnimations[textAnimationNumber].pause();
-                    }
+        //     function loop(t) {
+        //         timeManager.updateTime(t);
+        //         animation.tick(timeManager.getTime());
+        //         requestAnimationFrame(loop);
+        //     }
 
-                    if (Math.round(anim.progress) === 55) {
-                        textAnimations[textAnimationNumber].play();
-                    }
+        //     requestAnimationFrame(loop);
+        // }, 0);
 
-                    if (Math.round(anim.currentTime) >= 6400) {
-                        document.querySelector(
-                            ".card__image"
-                        ).src = `./${numberSlide}.svg`;
-                    }
-                },
-                loopBegin: function() {
-                    textAnimations[textAnimationNumber].play();
-                },
-                loopComplete: function() {
-                    if (numberSlide === 3) {
-                        numberSlide = 1;
-                    } else {
-                        numberSlide++;
-                    }
-                    textAnimationNumber++;
-                    if (textAnimationNumber > 2) {
-                        textAnimationNumber = 0;
-                    }
-                },
-            });
-            // --var3
-            // const textAnimations = [
-            //     anime({
-            //         targets: ".card__textCard1 *",
-            //         easing: "easeInOutSine",
-            //         autoplay: false,
-            //         duration: 800,
-            //         rotate: "1turn",
-            //         opacity: [0, 8],
-            //         delay: function(el, i, l) {
-            //             return i * 100;
-            //         },
-            //         translateX: function(...test) {
-            //             return [anime.random(-50, 50), 0];
-            //         },
-            //         translateY: function(...test) {
-            //             return [anime.random(-50, 50), 0];
-            //         },
-            //         direction: "alternate",
-            //         // delay: 800,
-            //         complete: function(anim) {
-            //             // textAnimation2.play();
-            //             // textAnimations[textAnimationNumber].play();
-            //         },
-            //         update: function(anim) {},
-            //     }),
-            //     anime({
-            //         targets: ".card__textCard2 *",
-            //         easing: "easeInOutSine",
-            //         autoplay: false,
-            //         duration: 800,
-            //         opacity: [0, 10],
-            //         direction: "alternate",
-            //         // endDelay: 1000,
-            //         delay: function(el, i, l) {
-            //             return i * 100;
-            //         },
-            //         // endDelay: 5000,
-            //         complete: function(anim) {
-            //             // textAnimation3.play();
-            //         },
-            //     }),
-            //     anime({
-            //         targets: ".card__textCard3 *",
-            //         easing: "easeInOutSine",
-            //         autoplay: false,
-            //         duration: 800,
-            //         opacity: [0, 5],
-            //         direction: "alternate",
-            //         // endDelay: 1500,
-            //         translateX: function(...test) {
-            //             return [anime.random(-50, 50), 0];
-            //         },
-            //         translateY: function(...test) {
-            //             return [anime.random(-50, 50), 0];
-            //         },
-            //         delay: function(el, i, l) {
-            //             return i * 100;
-            //         },
-            //         // endDelay: 5000,
-            //         complete: function(anim) {
-            //             // textAnimation1.play();
-            //         },
-            //     }),
-            // ];
+        // // --var2
+
+        // --var3
+        const animation = anime({
+          targets: ".card__image",
+          easing: "easeInOutSine",
+          loop: true,
+          direction: "normal",
+          autoplay: true,
+          duration: 800,
+          delay: () => 6000,
+          rotate: "1turn",
+
+          update: function (anim) {
+            if (Math.round(anim.progress) === 30) {
+              textAnimations[textAnimationNumber].pause();
+            }
+
+            if (Math.round(anim.progress) === 55) {
+              textAnimations[textAnimationNumber].play();
+            }
+
+            if (Math.round(anim.currentTime) >= 6400) {
+              document.querySelector(
+                ".card__image"
+              ).src = `./${numberSlide}.svg`;
+            }
+          },
+          loopBegin: function () {
+            textAnimations[textAnimationNumber].play();
+          },
+          loopComplete: function () {
+            if (numberSlide === 3) {
+              numberSlide = 1;
+            } else {
+              numberSlide++;
+            }
+            textAnimationNumber++;
+            if (textAnimationNumber > 2) {
+              textAnimationNumber = 0;
+            }
+          },
         });
+        // --var3
+        // const textAnimations = [
+        //     anime({
+        //         targets: ".card__textCard1 *",
+        //         easing: "easeInOutSine",
+        //         autoplay: false,
+        //         duration: 800,
+        //         rotate: "1turn",
+        //         opacity: [0, 8],
+        //         delay: function(el, i, l) {
+        //             return i * 100;
+        //         },
+        //         translateX: function(...test) {
+        //             return [anime.random(-50, 50), 0];
+        //         },
+        //         translateY: function(...test) {
+        //             return [anime.random(-50, 50), 0];
+        //         },
+        //         direction: "alternate",
+        //         // delay: 800,
+        //         complete: function(anim) {
+        //             // textAnimation2.play();
+        //             // textAnimations[textAnimationNumber].play();
+        //         },
+        //         update: function(anim) {},
+        //     }),
+        //     anime({
+        //         targets: ".card__textCard2 *",
+        //         easing: "easeInOutSine",
+        //         autoplay: false,
+        //         duration: 800,
+        //         opacity: [0, 10],
+        //         direction: "alternate",
+        //         // endDelay: 1000,
+        //         delay: function(el, i, l) {
+        //             return i * 100;
+        //         },
+        //         // endDelay: 5000,
+        //         complete: function(anim) {
+        //             // textAnimation3.play();
+        //         },
+        //     }),
+        //     anime({
+        //         targets: ".card__textCard3 *",
+        //         easing: "easeInOutSine",
+        //         autoplay: false,
+        //         duration: 800,
+        //         opacity: [0, 5],
+        //         direction: "alternate",
+        //         // endDelay: 1500,
+        //         translateX: function(...test) {
+        //             return [anime.random(-50, 50), 0];
+        //         },
+        //         translateY: function(...test) {
+        //             return [anime.random(-50, 50), 0];
+        //         },
+        //         delay: function(el, i, l) {
+        //             return i * 100;
+        //         },
+        //         // endDelay: 5000,
+        //         complete: function(anim) {
+        //             // textAnimation1.play();
+        //         },
+        //     }),
+        // ];
+      });
     </script>
-</body>
-
+  </body>
 </html>
