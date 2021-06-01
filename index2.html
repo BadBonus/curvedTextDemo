@@ -66,12 +66,14 @@
     <br />
     <div class="card">
         <img src="./1.png" alt="" class="card__image" />
-        <div class="card__textCard">
+        <div class="card__textCard card__textCard1">
             <span>Д</span>
             <span>Е</span>
             <span>Л</span>
             <span>А</span>
             <span>Й</span>
+
+            <span> </span>
 
             <span>С</span>
             <span>Т</span>
@@ -79,6 +81,41 @@
             <span>В</span>
             <span>К</span>
             <span>И</span>
+        </div>
+        <div class="card__textCard card__textCard2">
+            <span>И</span>
+            <span>Г</span>
+            <span>Р</span>
+            <span>А</span>
+            <span>Й</span>
+
+            <br />
+
+            <span>В</span>
+            <span> </span>
+            <span>П</span>
+            <span>О</span>
+            <span>К</span>
+            <span>Е</span>
+            <span>Р</span>
+        </div>
+
+        <div class="card__textCard card__textCard3">
+            <span>X</span>
+            <span>X</span>
+            <span>X</span>
+            <span>X</span>
+            <span>X</span>
+
+            <br />
+
+            <span>Y</span>
+            <span>Y</span>
+            <span>Y</span>
+            <span>Y</span>
+            <span>Y</span>
+            <span>Y</span>
+            <span>Y</span>
         </div>
     </div>
     <script>
@@ -239,6 +276,7 @@
 
             // // --var2
 
+            // --var3
             const animation = anime({
                 targets: ".card__image",
                 easing: "easeInOutSine",
@@ -246,22 +284,85 @@
                 direction: "normal",
                 autoplay: true,
                 duration: 800,
-                delay: () => 4000,
+                delay: () => 6000,
                 rotate: "1turn",
 
                 update: function(anim) {
-                    if (Math.round(anim.currentTime) >= 4400) {
+                    if (Math.round(anim.currentTime) >= 6400) {
                         document.querySelector(
                             ".card__image"
                         ).src = `./${numberSlide}.png`;
                     }
                 },
                 loopComplete: function() {
-                    if (numberSlide === 5) {
+                    if (numberSlide === 3) {
                         numberSlide = 1;
                     } else {
                         numberSlide++;
                     }
+                },
+            });
+            // --var3
+
+            const textAnimation1 = anime({
+                targets: ".card__textCard1 span",
+                easing: "easeInOutSine",
+                direction: "normal",
+                autoplay: true,
+                duration: 800,
+                rotate: "1turn",
+                opacity: [0, 8],
+                translateX: function(...test) {
+                    return [anime.random(-50, 50), 0];
+                },
+                translateY: function(...test) {
+                    return [anime.random(-50, 50), 0];
+                },
+                direction: "alternate",
+                delay: 800,
+                complete: function(anim) {
+                    textAnimation2.play();
+                },
+                endDelay: 2000,
+            });
+
+            const textAnimation2 = anime({
+                targets: ".card__textCard2 span",
+                easing: "easeInOutSine",
+                direction: "normal",
+                autoplay: false,
+                duration: 800,
+                opacity: [0, 10],
+                direction: "alternate",
+                endDelay: 1000,
+                delay: function(el, i, l) {
+                    return i * 100;
+                },
+                complete: function(anim) {
+                    textAnimation3.play();
+                },
+            });
+
+            const textAnimation3 = anime({
+                targets: ".card__textCard3 span",
+                easing: "easeInOutSine",
+                direction: "normal",
+                autoplay: false,
+                duration: 800,
+                opacity: [0, 5],
+                direction: "alternate",
+                endDelay: 1500,
+                translateX: function(...test) {
+                    return [anime.random(-50, 50), 0];
+                },
+                translateY: function(...test) {
+                    return [anime.random(-50, 50), 0];
+                },
+                delay: function(el, i, l) {
+                    return i * 100;
+                },
+                complete: function(anim) {
+                    textAnimation1.play();
                 },
             });
         });
