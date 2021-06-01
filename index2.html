@@ -144,6 +144,8 @@
         left: 0;
         right: 0;
         opacity: 0;
+        border: none;
+        box-shadow: none;
       }
       .link {
         color: #fff;
@@ -172,9 +174,9 @@
     <br />
     <div class="card">
       <div class="card__imgWrapper">
-        <img src="./4.png" alt="" class="card__image" />
+        <img src="./1.svg" alt="" class="card__image" />
       </div>
-      <div class="card__textCard card__textCard1">
+      <!-- <div class="card__textCard card__textCard1">
         <img src="./11.svg" alt="" /><img src="./12.svg" alt="" />
       </div>
       <div class="card__textCard card__textCard2">
@@ -185,8 +187,7 @@
       </div>
       <div class="card__textCard card__textCard4">
         <img src="./41.svg" alt="" /><img src="./42.svg" alt="" />
-      </div>
-      <img src="./logo.svg" alt="" class="logo" />
+      </div> -->
       <div class="link">www.europebet.by</div>
     </div>
     <script>
@@ -288,7 +289,7 @@
         // const animation = anime({
         //     targets: ".tick-demo .el",
         //     translateX: 270,
-        //     direction: "alternate",
+        //     direction: "normal",
         //     loop: true,
         //     easing: "easeInOutQuad",
         //     autoplay: false,
@@ -352,108 +353,157 @@
         const animation = anime({
           targets: ".card__image",
           easing: "easeInOutSine",
-          loop: true,
+          loop: 4,
           direction: "normal",
           autoplay: true,
           duration: 800,
           delay: () => 6000,
           rotate: "1turn",
-
           update: function (anim) {
-            if (Math.round(anim.progress) === 30) {
-              textAnimations[textAnimationNumber].pause();
-            }
+            // if (Math.round(anim.progress) === 30) {
+            //     console.log('st');
+            //   textAnimations[textAnimationNumber].pause();
+            // }
 
-            if (Math.round(anim.progress) === 55) {
-              textAnimations[textAnimationNumber].play();
-            }
+            // if (Math.round(anim.progress) === 55) {
+            //   textAnimations[textAnimationNumber].play();
+            // }
 
             if (Math.round(anim.currentTime) >= 6400) {
-              document.querySelector(
-                ".card__image"
-              ).src = `./${numberSlide}.svg`;
+              if (numberSlide !== 5) {
+                document
+                  .querySelector(".card__imgWrapper")
+                  .classList.remove("logo");
+
+                document.querySelector(".card__image").src =
+                  numberSlide === 4
+                    ? `./${numberSlide}.png`
+                    : `./${numberSlide}.svg`;
+              } else {
+                document.querySelector(".card__image").src = "logo.svg";
+                document
+                  .querySelector(".card__imgWrapper")
+                  .classList.add("logo");
+              }
             }
           },
           loopBegin: function () {
-            textAnimations[textAnimationNumber].play();
+            textAnimations[textAnimationNumber].restart();
           },
-          loopComplete: function () {
-            if (numberSlide === 3) {
+          loopComplete: function (...test) {
+            textAnimations[textAnimationNumber].reverse();
+            textAnimations[textAnimationNumber].play();
+            if (numberSlide === 5) {
               numberSlide = 1;
             } else {
               numberSlide++;
             }
             textAnimationNumber++;
-            if (textAnimationNumber > 2) {
+            if (textAnimationNumber > 4) {
               textAnimationNumber = 0;
             }
           },
         });
         // --var3
-        // const textAnimations = [
-        //     anime({
-        //         targets: ".card__textCard1 *",
-        //         easing: "easeInOutSine",
-        //         autoplay: false,
-        //         duration: 800,
-        //         rotate: "1turn",
-        //         opacity: [0, 8],
-        //         delay: function(el, i, l) {
-        //             return i * 100;
-        //         },
-        //         translateX: function(...test) {
-        //             return [anime.random(-50, 50), 0];
-        //         },
-        //         translateY: function(...test) {
-        //             return [anime.random(-50, 50), 0];
-        //         },
-        //         direction: "alternate",
-        //         // delay: 800,
-        //         complete: function(anim) {
-        //             // textAnimation2.play();
-        //             // textAnimations[textAnimationNumber].play();
-        //         },
-        //         update: function(anim) {},
-        //     }),
-        //     anime({
-        //         targets: ".card__textCard2 *",
-        //         easing: "easeInOutSine",
-        //         autoplay: false,
-        //         duration: 800,
-        //         opacity: [0, 10],
-        //         direction: "alternate",
-        //         // endDelay: 1000,
-        //         delay: function(el, i, l) {
-        //             return i * 100;
-        //         },
-        //         // endDelay: 5000,
-        //         complete: function(anim) {
-        //             // textAnimation3.play();
-        //         },
-        //     }),
-        //     anime({
-        //         targets: ".card__textCard3 *",
-        //         easing: "easeInOutSine",
-        //         autoplay: false,
-        //         duration: 800,
-        //         opacity: [0, 5],
-        //         direction: "alternate",
-        //         // endDelay: 1500,
-        //         translateX: function(...test) {
-        //             return [anime.random(-50, 50), 0];
-        //         },
-        //         translateY: function(...test) {
-        //             return [anime.random(-50, 50), 0];
-        //         },
-        //         delay: function(el, i, l) {
-        //             return i * 100;
-        //         },
-        //         // endDelay: 5000,
-        //         complete: function(anim) {
-        //             // textAnimation1.play();
-        //         },
-        //     }),
-        // ];
+        const textAnimations = [
+          anime({
+            targets: ".card__textCard1 *",
+            easing: "easeInOutSine",
+            autoplay: false,
+            duration: 800,
+            rotate: "1turn",
+            opacity: [0, 8],
+            delay: function (el, i, l) {
+              return i * 100;
+            },
+            translateX: function (...test) {
+              return [anime.random(-50, 50), 0];
+            },
+            translateY: function (...test) {
+              return [anime.random(-50, 50), 0];
+            },
+            direction: "normal",
+            // delay: 800,
+            complete: function (anim) {
+              // textAnimation2.play();
+              // textAnimations[textAnimationNumber].play();
+            },
+            update: function (anim) {},
+          }),
+          anime({
+            targets: ".card__textCard2 *",
+            easing: "easeInOutSine",
+            autoplay: false,
+            duration: 800,
+            opacity: [0, 10],
+            direction: "normal",
+            // endDelay: 1000,
+            delay: function (el, i, l) {
+              return i * 100;
+            },
+            // endDelay: 5000,
+            complete: function (anim) {
+              // textAnimation3.play();
+            },
+          }),
+          anime({
+            targets: ".card__textCard3 *",
+            easing: "easeInOutSine",
+            autoplay: false,
+            duration: 800,
+            opacity: [0, 5],
+            direction: "normal",
+            // endDelay: 1500,
+            translateX: function (...test) {
+              return [anime.random(-50, 50), 0];
+            },
+            translateY: function (...test) {
+              return [anime.random(-50, 50), 0];
+            },
+            delay: function (el, i, l) {
+              return i * 100;
+            },
+            // endDelay: 5000,
+            complete: function (anim) {
+              // textAnimation1.play();
+            },
+          }),
+          anime({
+            targets: ".card__textCard4 *",
+            easing: "easeInOutSine",
+            autoplay: false,
+            duration: 800,
+            opacity: [0, 5],
+            direction: "normal",
+            // endDelay: 1500,
+            translateX: function (...test) {
+              return [anime.random(-50, 50), 0];
+            },
+            translateY: function (...test) {
+              return [anime.random(-50, 50), 0];
+            },
+            delay: function (el, i, l) {
+              return i * 100;
+            },
+            // endDelay: 5000,
+            complete: function (anim) {
+              // textAnimation1.play();
+            },
+          }),
+          anime({
+            targets: [".logo", ".link"],
+            easing: "easeInOutSine",
+            autoplay: false,
+            duration: 800,
+            opacity: 100,
+            direction: "normal",
+            // endDelay: 1500,
+            // endDelay: 5000,
+            complete: function (anim) {
+              // textAnimation1.play();
+            },
+          }),
+        ];
       });
     </script>
   </body>
