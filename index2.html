@@ -90,11 +90,11 @@
             position: relative;
         }
         
-        .card__textCard1 img:first-child {
+        .card__textCard1>img:first-child {
             width: 200px;
         }
         
-        .card__textCard1 img:last-child {
+        .card__textCard1>img:last-child {
             bottom: 14px;
             width: 188px;
         }
@@ -104,12 +104,12 @@
             bottom: 48px;
         }
         
-        .card__textCard2 img:first-child {
+        .card__textCard2>img:first-child {
             width: 126px;
             right: 25px;
         }
         
-        .card__textCard2 img:last-child {
+        .card__textCard2>img:last-child {
             width: 180px;
             bottom: 20px;
         }
@@ -119,23 +119,23 @@
             bottom: 64px;
         }
         
-        .card__textCard3 img:first-child {
+        .card__textCard3>img:first-child {
             width: 165px;
             right: -2px;
         }
         
-        .card__textCard3 img:last-child {
+        .card__textCard3>img:last-child {
             width: 196px;
             left: 19px;
             bottom: 13px;
         }
         
-        .card__textCard4 img:first-child {
+        .card__textCard4>img:first-child {
             width: 169px;
             right: 16px;
         }
         
-        .card__textCard4 img:last-child {
+        .card__textCard4>img:last-child {
             bottom: 19px;
             width: 215px;
         }
@@ -173,14 +173,42 @@
             font-size: 18px;
         }
         
-        .card__textCard1 .card__imgParttop img {
+        .card__imgParttop>img,
+        .card__imgPartbot>img {
             width: 20px;
             /* height: 30px; */
         }
         
         .card__imgParttop {
-            position: relative;
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 112%;
+        }
+        
+        .card__imgPartbot {
+            position: absolute;
+            top: -45px;
+            left: 0;
+            right: 14px;
+        }
+        
+        .card__textCard1 .card__imgPartbot {
             left: 15px;
+        }
+        
+        .card__textCard2 .card__imgParttop {
+            top: -110px;
+            left: -44px;
+        }
+        
+        .card__textCard2 .card__imgPartbot>img,
+        .card__textCard2 .card__imgParttop>img {
+            width: 21px;
+        }
+        
+        .card__textCard2 .card__imgPartbot {
+            top: -73px;
         }
     </style>
 </head>
@@ -195,19 +223,55 @@
         <div class="card__imgWrapper">
             <img src="./1.svg" alt="" class="card__image" />
         </div>
+        <!-- Chapter1 -->
         <div class="card__textCard card__textCard1">
-            <!-- <img src="./11.svg" alt="" /><img src="./12.svg" alt="" /> -->
             <div class="card__imgParttop">
-                <img src="./d.svg" alt="" /><img style="height: 40px" src="./e.svg" alt="" /><img src="./l.svg" style="height: 34px; top: 4px; right: 3px" alt="" /><img style="height: 29px; top: 7px; right: 3px" src="./a_cur.svg" alt="" /><img style="height: 34px; top: 9px; right: 5px"
-                    src="./ik.svg" alt="" /><img style="height: 24px; top: 9px" src="./c.svg" alt="" />
-                <img src="./t.svg" alt="" style="height: 24px; top: 9px; right: 7px" />
-                <img style="height: 22px; right: 16px; top: 9px" src="./a.svg" alt="" />
-                <img src="./v.svg" style="right: 22px; top: 8px; height: 23px" alt="" />
-                <img src="./k.svg" style="height: 25px; right: 28px; top: 7px" alt="" />
-                <img style="right: 34px; height: 26px; top: 5px" src="./i.svg" alt="" />
+                <img src="./letters_img/1_top/d.svg" alt="" /><img style="height: 40px" src="./letters_img/1_top/e.svg" alt="" /><img src="./letters_img/1_top/l.svg" style="height: 34px; top: 4px; right: 3px" alt="" /><img style="height: 29px; top: 7px; right: 3px"
+                    src="./letters_img/1_top/a_cur.svg" alt="" /><img style="height: 34px; top: 9px; right: 5px" src="./letters_img/1_top/ik.svg" alt="" /><img style="height: 24px; top: 9px" src="./letters_img/1_top/c.svg" alt="" />
+                <img src="./letters_img/1_top/t.svg" alt="" style="height: 24px; top: 9px; right: 7px" />
+                <img style="height: 22px; right: 16px; top: 9px" src="./letters_img/1_top/a.svg" alt="" />
+                <img src="./letters_img/1_top/v.svg" style="right: 22px; top: 8px; height: 23px" alt="" />
+                <img src="./letters_img/1_top/k.svg" style="height: 25px; right: 28px; top: 7px" alt="" />
+                <img style="right: 34px; height: 26px; top: 4px" src="./letters_img/1_top/i.svg" alt="" />
             </div>
-            <div class="card__imgPartbot"></div>
+            <div class="card__imgPartbot">
+                <img src="./letters_img/1_bot/n.svg" alt="" />
+                <img style="top: 2px; width: 24px" src="./letters_img/1_bot/a.svg" alt="" />
+                <img style="left: 12px; top: 5px" src="./letters_img/1_bot/c.svg" alt="" />
+                <img style="left: 13px; top: 5px" src="./letters_img/1_bot/pp.svg" alt="" />
+                <img style="left: 14px; width: 25px; top: 6px" src="./letters_img/1_bot/o.svg" alt="" />
+                <img style="left: 14px; top: 6px" src="./letters_img/1_bot/p.svg" alt="" />
+                <img style="left: 12px; width: 22px; top: 2px" src="./letters_img/1_bot/t.svg" alt="" />
+                <img src="./letters_img/1_bot/__!.svg" style="height: 38px; left: 6px" alt="" />
+            </div>
         </div>
+        <!-- Chapter1 -->
+        <!-- Chapter2 -->
+        <div class="card__textCard card__textCard2">
+            <div class="card__imgParttop">
+                <img style="bottom: 15px" src="./letters_img/2_top/i.svg" alt="" />
+                <img style="width: 16px; bottom: 10px" src="./letters_img/2_top/j.svg" alt="" />
+                <img src="./letters_img/2_top/p_1.svg" alt="" />
+                <img style="width: 27px; right: 7px; top: 4px" src="./letters_img/2_top/a.svg" alt="" />
+                <img style="width: 22px; right: 8px; top: 5px" src="./letters_img/2_top/ii.svg" alt="" />
+            </div>
+            <div class="card__imgPartbot">
+                <img src="./letters_img/2_top/b.svg" alt="" />
+                <img style="left: 14px; top: 8px" src="./letters_img/2_top/p.svg" alt="" />
+                <img style="left: 14px; top: 9px; width: 24px" src="./letters_img/2_top/o.svg" alt="" />
+                <img style="left: 14px; top: 9px" src="./letters_img/2_top/k.svg" alt="" />
+                <img style="left: 14px; top: 9px; width: 17px" src="./letters_img/2_top/e.svg" alt="" />
+                <img style="
+              left: 14px;
+              top: 7px;
+
+              width: 19px;
+            " src="./letters_img/2_top/r.svg" alt="" />
+                <img src="./letters_img/1_bot/__!.svg" style="height: 38px; left: 6px" alt="" />
+            </div>
+        </div>
+        <!-- Chapter2 -->
+
         <!-- <div class="card__textCard card__textCard2">
             <img src="./21.svg" alt="" /><img src="./22.svg" alt="" />
         </div>
@@ -262,7 +326,7 @@
             const animation = anime({
                 targets: ".card__image",
                 easing: "easeInOutSine",
-                loop: 4,
+                loop: 2, //4
                 direction: "normal",
                 autoplay: true,
                 duration: 800,
@@ -320,7 +384,10 @@
             // --var3
             const textAnimations = [
                 anime({
-                    targets: ".card__textCard1 .card__imgParttop img",
+                    targets: [
+                        ".card__textCard1 .card__imgParttop img",
+                        ".card__textCard1 .card__imgPartbot img",
+                    ],
                     easing: "easeOutQuart",
                     autoplay: false,
                     duration: 400,
@@ -329,10 +396,14 @@
                         return i * 50;
                     },
                     translateX: function(el, index) {
-                        return [20, 0];
+                        return [15, 0];
                     },
                     translateY: function(el, index) {
-                        return [-20, 0];
+                        if (index <= 10) {
+                            return [-20, 0];
+                        } else {
+                            return [20, 0];
+                        }
                     },
                     direction: "easeInOutQuart",
                     // delay: 800,
@@ -343,20 +414,34 @@
                     update: function(anim) {},
                 }),
                 anime({
-                    targets: ".card__textCard2 *",
-                    easing: "easeInOutSine",
+                    targets: [
+                        ".card__textCard2 .card__imgParttop img",
+                        ".card__textCard2 .card__imgPartbot img",
+                    ],
+                    easing: "easeOutQuart",
                     autoplay: false,
-                    duration: 800,
-                    opacity: [0, 10],
-                    direction: "normal",
-                    // endDelay: 1000,
+                    duration: 400,
+                    opacity: [0, 12],
                     delay: function(el, i, l) {
-                        return i * 100;
+                        return i * 50;
                     },
-                    // endDelay: 5000,
+                    translateX: function(el, index) {
+                        return [15, 0];
+                    },
+                    translateY: function(el, index) {
+                        if (index <= 4) {
+                            return [-10, 0];
+                        } else {
+                            return [20, 0];
+                        }
+                    },
+                    direction: "easeInOutQuart",
+                    // delay: 800,
                     complete: function(anim) {
-                        // textAnimation3.play();
+                        // textAnimation2.play();
+                        // textAnimations[textAnimationNumber].play();
                     },
+                    update: function(anim) {},
                 }),
                 anime({
                     targets: ".card__textCard3 *",
