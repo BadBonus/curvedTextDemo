@@ -175,7 +175,7 @@
         
         .card__textCard1 .card__imgParttop img {
             width: 20px;
-            height: 30px;
+            /* height: 30px; */
         }
     </style>
 </head>
@@ -193,8 +193,13 @@
         <div class="card__textCard card__textCard1">
             <!-- <img src="./11.svg" alt="" /><img src="./12.svg" alt="" /> -->
             <div class="card__imgParttop">
-                <img src="./d.svg" alt="" /><img src="./e.svg" alt="" /><img src="./l.svg" alt="" /><img src="./a.svg" alt="" /><img src="./i.svg" alt="" /><img src="./c.svg" alt="" /><img src="./t.svg" alt="" /><img src="./a.svg" alt="" /><img src="./v.svg"
-                    alt="" /><img src="./k.svg" alt="" /><img src="./i.svg" alt="" />
+                <img src="./d.svg" alt="" /><img style="height: 40px" src="./e.svg" alt="" /><img src="./l.svg" style="height: 34px; top: 4px; right: 3px" alt="" /><img style="height: 29px; top: 7px; right: 3px" src="./a_cur.svg" alt="" /><img style="height: 34px; top: 9px; right: 5px"
+                    src="./ik.svg" alt="" /><img style="height: 24px; top: 9px" src="./c.svg" alt="" />
+                <img src="./t.svg" alt="" style="height: 24px; top: 9px; right: 7px" />
+                <img style="height: 22px; right: 16px; top: 9px" src="./a.svg" alt="" />
+                <img src="./v.svg" style="right: 22px; top: 8px; height: 23px" alt="" />
+                <img src="./k.svg" style="height: 25px; right: 28px; top: 7px" alt="" />
+                <img style="right: 34px; height: 26px; top: 5px" src="./i.svg" alt="" />
             </div>
             <div class="card__imgPartbot"></div>
         </div>
@@ -291,7 +296,7 @@
                     textAnimations[4].play();
                 },
                 loopBegin: function() {
-                    textAnimations[textAnimationNumber].restart();
+                    // textAnimations[textAnimationNumber].restart();
                 },
                 loopComplete: function(...test) {
                     // textAnimations[textAnimationNumber].reverse();
@@ -314,7 +319,7 @@
                     easing: "easeInOutSine",
                     autoplay: false,
                     duration: 800,
-                    opacity: [0, 8],
+                    opacity: [1, 8],
                     delay: function(el, i, l) {
                         return i * 100;
                     },
