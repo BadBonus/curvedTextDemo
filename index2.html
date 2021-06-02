@@ -237,12 +237,12 @@
         
         .card__textCard4 .card__imgParttop {
             top: -113px;
-            left: -26px;
+            left: -27px;
         }
         
         .card__textCard4 .card__imgPartbot {
             top: -82px;
-            left: 12px;
+            left: 10px;
             width: 100%;
         }
     </style>
@@ -350,7 +350,7 @@
                 <img src="./letters_img/4/B_1.svg" alt="" />
                 <img style="width: 19px; top: 4px" src="./letters_img/4/O.svg" alt="" />
                 <img style="padding-right: 10px; top: 10px; width: 13px" src="./letters_img/4/EE_1.svg" alt="" />
-                <img style="width: 21px; top: 9px" src="./letters_img/4/OO.svg" alt="" />
+                <img style="width: 19px; top: 9px" src="./letters_img/4/Okno.svg" alt="" />
                 <img style="top: 9px" src="./letters_img/4/K.svg" alt="" />
                 <img style="top: 10px; width: 15px" src="./letters_img/4/N.svg" alt="" />
                 <img style="width: 19px; top: 4px" src="./letters_img/4/OO.svg" alt="" />
@@ -365,9 +365,9 @@
                 <img style="right: 10px; top: 12px" src="./letters_img/4/CH.svg" alt="" />
                 <img style="top: 11px; right: 9px; width: 14px" src="./letters_img/4/E.svg" alt="" />
 
-                <img style="top: 6px; right: 9px" src="./letters_img/4/N.svg" alt="" />
-                <img style="top: -2px; right: 9px" src="./letters_img/4/I.svg" alt="" />
-                <img style="right: 9px; top: -11px" src="./letters_img/4/II.svg" alt="" />
+                <img style="top: 8px; right: 9px" src="./letters_img/4/N.svg" alt="" />
+                <img style="right: 9px; opacity: 1; width: 18px; top: 4px" src="./letters_img/4/I.svg" alt="" />
+                <img style="right: 9px; top: -6px" src="./letters_img/4/II.svg" alt="" />
             </div>
         </div>
         <!-- Chapter4-->
@@ -424,11 +424,6 @@
                 delay: () => 4000,
                 rotate: "1turn",
                 update: function(anim) {
-                    // if (Math.round(anim.progress) === 30) {
-                    //     console.log('st');
-                    //   textAnimations[textAnimationNumber].pause();
-                    // }
-
                     if (Math.round(anim.progress) === 70) {
                         textAnimations[textAnimationNumber].reverse();
                         textAnimations[textAnimationNumber].play();
@@ -453,7 +448,7 @@
                     }
                 },
                 complete: function() {
-                    textAnimations[5].play();
+                    textAnimations[4].play();
                 },
                 loopBegin: function() {
                     textAnimations[textAnimationNumber].restart();
@@ -586,36 +581,6 @@
                             return [-5, 0];
                         } else {
                             return [10, 0];
-                        }
-                    },
-                    direction: "easeInOutQuart",
-                    // delay: 800,
-                    complete: function(anim) {
-                        // textAnimation2.play();
-                        // textAnimations[textAnimationNumber].play();
-                    },
-                    update: function(anim) {},
-                }),
-                anime({
-                    targets: [
-                        ".card__textCard2 .card__imgParttop img",
-                        ".card__textCard2 .card__imgPartbot img",
-                    ],
-                    easing: "easeOutQuart",
-                    autoplay: false,
-                    duration: 400,
-                    opacity: [0, 12],
-                    delay: function(el, i, l) {
-                        return i * 50;
-                    },
-                    translateX: function(el, index) {
-                        return [15, 0];
-                    },
-                    translateY: function(el, index) {
-                        if (index <= 4) {
-                            return [-10, 0];
-                        } else {
-                            return [20, 0];
                         }
                     },
                     direction: "easeInOutQuart",
