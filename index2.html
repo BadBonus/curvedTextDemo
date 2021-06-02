@@ -200,60 +200,6 @@
         <div class="link">www.europebet.by</div>
     </div>
     <script>
-        // var rotate = 0.5;
-        // let isUp = true;
-
-        // // const x = anime({
-        // //     targets: ".card__image",
-        // //     rotate: "1turn",
-        // //     easing: "linear",
-        // //     loop: true,
-        // //     duration: 1500,
-        // //     loopComplete: function(anim) {
-        // //         console.log(x);
-        // //         // rotate++;
-        // //         // anim.rotate = `${rotate}turn`;
-        // //     },
-        // // });
-        // var animation = anime({
-        //     targets: ".card__image",
-        //     rotate: "1turn",
-        //     loop: true,
-        //     easing: "linear",
-        //     autoplay: false,
-        //     loopComplete: function(anim) {},
-        // });
-
-        // function loop(t) {
-        //     // if (rotate >= 100) isUp = false;
-        //     // console.log(rotate);
-        //     // if (isUp) {
-        //     //     rotate += 0.5;
-        //     //     animation.tick((t + rotate + rotate * rotate) / 2);
-        //     // } else {
-        //     //     rotate -= 0.5;
-        //     //     animation.tick((t - rotate + rotate * rotate) / 2);
-        //     // }
-        //     if (rotate > 100) {
-        //         status = "down";
-        //     }
-        //     if (rotate <script 1) {
-        //         status = "up";
-        //     }
-
-        //     if (status === "up") {
-        //         rotate += 1;
-        //     }
-        //     if (status === "down") {
-        //         rotate -= 1;
-        //     }
-        //     console.log(Math.round(t + t / rotate));
-        //     animation.tick(Math.round(t + t / rotate));
-        //     customRAF = requestAnimationFrame(loop);
-        // }
-
-        // requestAnimationFrame(loop);
-
         const link = new Letterize({
             targets: ".link",
         });
@@ -291,78 +237,9 @@
         }
 
         window.setTimeout(() => {
-            // const $speed = document.querySelector("#speed");
 
             const timeManager = new TimeMagic(1);
 
-            // $speed.addEventListener("change", (event) => {
-            //     timeManager.updateSpeed(parseFloat(event.target.value));
-            // });
-
-            // const animation = anime({
-            //     targets: ".tick-demo .el",
-            //     translateX: 270,
-            //     direction: "normal",
-            //     loop: true,
-            //     easing: "easeInOutQuad",
-            //     autoplay: false,
-            // });
-
-            //     // --var2
-
-            //     const animation = anime({
-            //         targets: ".card__image",
-            //         rotate: "1turn",
-            //         loop: true,
-            //         easing: "linear",
-            //         autoplay: false,
-            //         duration: 800,
-            //         loopComplete: function(anim) {
-            //             if (status === "up") {
-            //                 changeNumber += 0.5;
-            //             }
-            //             if (status === "down") {
-            //                 changeNumber -= 0.5;
-            //             }
-            //             timeManager.updateSpeed(parseFloat(changeNumber));
-            //         },
-            //         loopBegin: function(anim) {
-            //             if (changeNumber >= 4) {
-            //                 status = "down";
-            //             }
-
-            //             switch (numberSlide) {
-            //                 case 1:
-            //                     document.querySelector(".card__image").src = "./2.png";
-            //                     break;
-            //                 case 2:
-            //                     document.querySelector(".card__image").src = "./3.png";
-            //                     break;
-            //                 case 3:
-            //                     document.querySelector(".card__image").src = "./4.png";
-            //                     break;
-            //                 case 4:
-            //                     document.querySelector(".card__image").src = "./5.png";
-            //                     break;
-
-            //                 default:
-            //                     break;
-            //             }
-            //         },
-            //     });
-
-            //     function loop(t) {
-            //         timeManager.updateTime(t);
-            //         animation.tick(timeManager.getTime());
-            //         requestAnimationFrame(loop);
-            //     }
-
-            //     requestAnimationFrame(loop);
-            // }, 0);
-
-            // // --var2
-
-            // --var3
             const animation = anime({
                 targets: ".card__image",
                 easing: "easeInOutSine",
