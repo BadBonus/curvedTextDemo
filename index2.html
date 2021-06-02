@@ -177,6 +177,11 @@
             width: 20px;
             /* height: 30px; */
         }
+        
+        .card__imgParttop {
+            position: relative;
+            left: 15px;
+        }
     </style>
 </head>
 
@@ -296,7 +301,7 @@
                     textAnimations[4].play();
                 },
                 loopBegin: function() {
-                    // textAnimations[textAnimationNumber].restart();
+                    textAnimations[textAnimationNumber].restart();
                 },
                 loopComplete: function(...test) {
                     // textAnimations[textAnimationNumber].reverse();
@@ -316,17 +321,20 @@
             const textAnimations = [
                 anime({
                     targets: ".card__textCard1 .card__imgParttop img",
-                    easing: "easeInOutSine",
+                    easing: "easeOutQuart",
                     autoplay: false,
-                    duration: 800,
-                    opacity: [1, 8],
+                    duration: 400,
+                    opacity: [0, 12],
                     delay: function(el, i, l) {
-                        return i * 100;
+                        return i * 50;
                     },
                     translateX: function(el, index) {
                         return [20, 0];
                     },
-                    direction: "normal",
+                    translateY: function(el, index) {
+                        return [-20, 0];
+                    },
+                    direction: "easeInOutQuart",
                     // delay: 800,
                     complete: function(anim) {
                         // textAnimation2.play();
