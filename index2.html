@@ -243,7 +243,7 @@
             <img src="./1.svg" alt="" class="card__image" />
         </div>
         <!-- Chapter1 -->
-        <!-- <div class="card__textCard card__textCard1">
+        <div class="card__textCard card__textCard1">
             <div class="card__imgParttop">
                 <img src="./letters_img/1_top/d.svg" alt="" /><img style="height: 40px" src="./letters_img/1_top/e.svg" alt="" /><img src="./letters_img/1_top/l.svg" style="height: 34px; top: 4px; right: 3px" alt="" /><img style="height: 29px; top: 7px; right: 3px"
                     src="./letters_img/1_top/a_cur.svg" alt="" /><img style="height: 34px; top: 9px; right: 5px" src="./letters_img/1_top/ik.svg" alt="" /><img style="height: 24px; top: 9px" src="./letters_img/1_top/c.svg" alt="" />
@@ -263,10 +263,10 @@
                 <img style="left: 12px; width: 22px; top: 2px" src="./letters_img/1_bot/t.svg" alt="" />
                 <img src="./letters_img/1_bot/__!.svg" style="height: 38px; left: 6px" alt="" />
             </div>
-        </div> -->
+        </div>
         <!-- Chapter1 -->
         <!-- Chapter2 -->
-        <!-- <div class="card__textCard card__textCard2">
+        <div class="card__textCard card__textCard2">
             <div class="card__imgParttop">
                 <img style="bottom: 15px" src="./letters_img/2_top/i.svg" alt="" />
                 <img style="width: 16px; bottom: 10px" src="./letters_img/2_top/j.svg" alt="" />
@@ -288,7 +288,7 @@
             " src="./letters_img/2_top/r.svg" alt="" />
                 <img src="./letters_img/1_bot/__!.svg" style="height: 38px; left: 6px" alt="" />
             </div>
-        </div> -->
+        </div>
         <!-- Chapter2 -->
 
         <!-- Chapter3 -->
@@ -378,7 +378,7 @@
             const animation = anime({
                 targets: ".card__image",
                 easing: "easeInOutSine",
-                loop: 2, //4
+                loop: 3, //4
                 direction: "normal",
                 autoplay: true,
                 duration: 800,
@@ -417,7 +417,7 @@
                     textAnimations[4].play();
                 },
                 loopBegin: function() {
-                    // textAnimations[textAnimationNumber].restart();
+                    textAnimations[textAnimationNumber].restart();
                 },
                 loopComplete: function(...test) {
                     // textAnimations[textAnimationNumber].reverse();
@@ -502,28 +502,30 @@
                     ],
                     easing: "easeOutQuart",
                     autoplay: false,
-                    duration: 400,
-                    opacity: [1, 12],
+                    duration: 200,
+                    opacity: [0, 12],
                     delay: function(el, i, l) {
-                        return i * 50;
+                        return i * 30;
                     },
-                    // translateX: function(el, index) {
-                    //     return [15, 0];
-                    // },
-                    // translateY: function(el, index) {
-                    //     if (index <= 4) {
-                    //         return [-10, 0];
-                    //     } else {
-                    //         return [20, 0];
-                    //     }
-                    // },
+                    translateX: function(el, index) {
+                        return [15, 0];
+                    },
+                    translateY: function(el, index) {
+                        if (index <= 11) {
+                            return [-10, 0];
+                        } else {
+                            return [20, 0];
+                        }
+                    },
                     direction: "easeInOutQuart",
                     // delay: 800,
                     complete: function(anim) {
                         // textAnimation2.play();
                         // textAnimations[textAnimationNumber].play();
                     },
-                    update: function(anim) {},
+                    update: function(anim) {
+                        console.log('test');
+                    },
                 }),
                 anime({
                     targets: ".card__textCard4 *",
