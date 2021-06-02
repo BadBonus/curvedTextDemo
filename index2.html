@@ -172,6 +172,11 @@
             opacity: 0;
             font-size: 18px;
         }
+        
+        .card__textCard1 .card__imgParttop img {
+            width: 20px;
+            height: 30px;
+        }
     </style>
 </head>
 
@@ -186,9 +191,14 @@
             <img src="./1.svg" alt="" class="card__image" />
         </div>
         <div class="card__textCard card__textCard1">
-            <img src="./11.svg" alt="" /><img src="./12.svg" alt="" />
+            <!-- <img src="./11.svg" alt="" /><img src="./12.svg" alt="" /> -->
+            <div class="card__imgParttop">
+                <img src="./d.svg" alt="" /><img src="./e.svg" alt="" /><img src="./l.svg" alt="" /><img src="./a.svg" alt="" /><img src="./i.svg" alt="" /><img src="./c.svg" alt="" /><img src="./t.svg" alt="" /><img src="./a.svg" alt="" /><img src="./v.svg"
+                    alt="" /><img src="./k.svg" alt="" /><img src="./i.svg" alt="" />
+            </div>
+            <div class="card__imgPartbot"></div>
         </div>
-        <div class="card__textCard card__textCard2">
+        <!-- <div class="card__textCard card__textCard2">
             <img src="./21.svg" alt="" /><img src="./22.svg" alt="" />
         </div>
         <div class="card__textCard card__textCard3">
@@ -196,7 +206,7 @@
         </div>
         <div class="card__textCard card__textCard4">
             <img src="./41.svg" alt="" /><img src="./42.svg" alt="" />
-        </div>
+        </div> -->
         <div class="link">www.europebet.by</div>
     </div>
     <script>
@@ -237,7 +247,6 @@
         }
 
         window.setTimeout(() => {
-
             const timeManager = new TimeMagic(1);
 
             const animation = anime({
@@ -247,7 +256,7 @@
                 direction: "normal",
                 autoplay: true,
                 duration: 800,
-                delay: () => 1000,
+                delay: () => 4000,
                 rotate: "1turn",
                 update: function(anim) {
                     // if (Math.round(anim.progress) === 30) {
@@ -260,7 +269,7 @@
                         textAnimations[textAnimationNumber].play();
                     }
 
-                    if (Math.round(anim.currentTime) >= 1400) {
+                    if (Math.round(anim.currentTime) >= 4400) {
                         if (numberSlide !== 5) {
                             document
                                 .querySelector(".card__imgWrapper")
@@ -283,7 +292,6 @@
                 },
                 loopBegin: function() {
                     textAnimations[textAnimationNumber].restart();
-                    console.log(textAnimationNumber);
                 },
                 loopComplete: function(...test) {
                     // textAnimations[textAnimationNumber].reverse();
@@ -302,20 +310,16 @@
             // --var3
             const textAnimations = [
                 anime({
-                    targets: ".card__textCard1 *",
+                    targets: ".card__textCard1 .card__imgParttop img",
                     easing: "easeInOutSine",
                     autoplay: false,
                     duration: 800,
-                    rotate: "1turn",
                     opacity: [0, 8],
                     delay: function(el, i, l) {
                         return i * 100;
                     },
-                    translateX: function(...test) {
-                        return [anime.random(-50, 50), 0];
-                    },
-                    translateY: function(...test) {
-                        return [anime.random(-50, 50), 0];
+                    translateX: function(el, index) {
+                        return [20, 0];
                     },
                     direction: "normal",
                     // delay: 800,
