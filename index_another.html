@@ -291,46 +291,50 @@
       });
 
       topTimeLine
-        // .add({
-        //   targets: ".card__imgWrapper",
-        //   translateX: [-150, 0],
-        //   rotate: 360,
-        //   begin: function (anim) {
-        //     imageTop.src = imagesTop[0];
-        //   },
-        // })
-        // .add({
-        //   targets: ".card__imgWrapper",
-        //   translateX: [0, 250],
-        //   rotate: "580deg",
-        //   duration: 1600,
-        //   easing: "easeOutQuart",
-        // })
-        // .add({
-        //   targets: ".card__imgWrapper",
-        //   translateX: [250, 0],
-        //   rotate: "-360deg",
-        //   loopBegin: function (anim) {
-        //     imageTop.src = imagesTop[1];
-        //   },
-        // })
-        // .add({
-        //   targets: ".card__imgWrapper",
-        //   rotate: "360deg",
-        //   update: function (anim) {
-        //     if (Math.abs(Math.round(anim.progress) === 10))
-        //       imageTop.src = imagesTop[2];
-        //   },
-        // })
-        // .add({
-        //   targets: ".card__imgWrapper",
-        //   scale: [1, 0, 1],
-        //   easing: 'easeInOutQuart',
-        //   update: function (anim) {
-        //     if (Math.abs(Math.round(anim.progress) === 60))
-        //       imageTop.src = imagesTop[3];
-        //   },
-        // })
+        .add({
+          targets: ".card__imgWrapper",
+          translateX: [-250, 0],
+          rotate: 360,
+          endDelay:3000,
+          begin: function (anim) {
+            imageTop.src = imagesTop[0];
+          },
+        })
+        .add({
+          targets: ".card__imgWrapper",
+          translateX: [0, 250],
+          rotate: "580deg",
+          duration: 1600,
+          easing: "easeOutQuart",
+        })
+        .add({
+          targets: ".card__imgWrapper",
+          translateX: [250, 0],
+          rotate: "-360deg",
+          endDelay:3000,
+          loopBegin: function (anim) {
+            imageTop.src = imagesTop[1];
+          },
+        })
+        .add({
+          targets: ".card__imgWrapper",
+          rotate: "360deg",
+          endDelay:3000,
+          update: function (anim) {
+            if (Math.abs(Math.round(anim.progress) === 2))
+              imageTop.src = imagesTop[2];
+          },
+        })
+        .add({
+          targets: ".card__imgWrapper",
+          scale: [1, 0, 1],
+          endDelay:3000,
+          easing: 'easeInOutQuart',
+          update: function (anim) {
+            if (Math.abs(Math.round(anim.progress) === 30))
+              imageTop.src = imagesTop[3];
+          },
+        })
         .add({
           targets: ".card__imgWrapper",
           easing: 'linear',
@@ -345,6 +349,7 @@
           targets: ".card__imgWrapper",
           easing: 'linear',
           delay: 250,
+          endDelay:3000,
           begin:function (anim) {
             imageTop.src = imagesTop[4];
           },
