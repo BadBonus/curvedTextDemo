@@ -287,7 +287,7 @@
         <img src="./1.svg" id="topImg" alt="" class="card__image" />
       </div>
       <div class="card__textCard"></div>
-      <img id="botImg" src="./SVG/tvoeoknorzvl.svg" alt="" />
+      <img id="botImg" src="./SVG/stavkinasport.svg" alt="" />
 
       <div class="link">www.europebet.by</div>
     </div>
@@ -478,7 +478,30 @@
           opacity: 0,
           easing: "linear",
           delay: 600,
-          opacity: [1, 0],
+          changeComplete: function () {
+            imageBot.classList.remove("tvoeoknorzvl");
+          },
+        })
+        .add({
+          targets: ".link span",
+          easing: "easeInOutSine",
+          duration: 800,
+          opacity: [0, 0.6],
+          delay: anime.stagger(100),
+          translateX: function () {
+            return [anime.random(-50, 50), 0];
+          },
+          translateY: function () {
+            return [anime.random(-50, 50), 0];
+          },
+          endDelay: 2500,
+        })
+        .add({
+          targets: ".link span",
+          easing: "easeInOutSine",
+          duration: 800,
+          opacity: [0.6, 0],
+          delay: 0,
         });
 
       // let changeNumber = 0;
