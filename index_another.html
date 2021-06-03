@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./anime.js"></script>
+    <script src="./letterize.min.js"></script>
+
+    <style>
+      h1 {
+        position: relative;
+        margin-top: 55px;
+      }
+
+      span {
+        display: inline-block;
+        font: 26px Monaco, MonoSpace;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform-origin: center;
+        position: relative;
+      }
+
+      h1 {
+        text-align: center;
+        margin: auto;
+        margin-top: 22vw;
+        width: 220px;
+        position: absolute;
+        left: 200px;
+        text-transform: uppercase;
+      }
+
+      h1:first-child {
+        margin-top: 20vw;
+      }
+
+      .card {
+        overflow: hidden;
+        width: 240px;
+        height: 400px;
+        background-color: #e84e10;
+        position: relative;
+      }
+
+      .el {
+        width: 28px;
+        height: 28px;
+        background: gray;
+        border-radius: 14px;
+        display: block;
+      }
+
+      .card__textCard {
+        text-align: center;
+      }
+
+      .card__imgWrapper {
+        padding: 0;
+        box-shadow: 0 0 11px 0px #fff;
+        border-radius: 100px;
+        width: 160px;
+        margin: auto;
+        text-align: center;
+        height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 82px;
+      }
+
+      .card__imgWrapperLogo{
+        box-shadow: unset;
+        width: 190px;
+      }
+
+      .initImg {
+        width: 1271px;
+        position: relative;
+        left: -25px;
+      }
+
+      .card__textCard {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 52px;
+        margin: auto;
+      }
+
+      .card__textCard img {
+        position: relative;
+      }
+
+      .card__textCard1 > img:first-child {
+        width: 200px;
+      }
+
+      .card__textCard1 > img:last-child {
+        bottom: 14px;
+        width: 188px;
+      }
+
+      .card__textCard2 {
+        left: -33px;
+        bottom: 48px;
+      }
+
+      .card__textCard2 > img:first-child {
+        width: 126px;
+        right: 25px;
+      }
+
+      .card__textCard2 > img:last-child {
+        width: 180px;
+        bottom: 20px;
+      }
+
+      .card__textCard3 {
+        left: -14px;
+        bottom: 64px;
+      }
+
+      .card__textCard3 > img:first-child {
+        width: 165px;
+        right: -2px;
+      }
+
+      .card__textCard3 > img:last-child {
+        width: 196px;
+        left: 19px;
+        bottom: 13px;
+      }
+
+      .card__textCard4 > img:first-child {
+        width: 169px;
+        right: 16px;
+      }
+
+      .card__textCard4 > img:last-child {
+        bottom: 19px;
+        width: 215px;
+      }
+
+      .card__image {
+        width: 100%;
+      }
+
+      .logo {
+        width: 190px;
+        display: block;
+        margin: auto;
+        top: 178px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        /* opacity: 0; */
+        border: none;
+        box-shadow: none;
+      }
+
+      .link {
+        color: #fff;
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        /* opacity: 0; */
+      }
+
+      .link span {
+        opacity: 0;
+        font-size: 18px;
+      }
+
+      .card__imgParttop > img,
+      .card__imgPartbot > img {
+        width: 20px;
+        /* height: 30px; */
+      }
+
+      .card__imgParttop {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        width: 112%;
+      }
+
+      .card__imgPartbot {
+        position: absolute;
+        top: -45px;
+        left: 0;
+        right: 14px;
+      }
+
+      .card__textCard1 .card__imgPartbot {
+        left: 15px;
+      }
+
+      .card__textCard2 .card__imgParttop {
+        top: -110px;
+        left: -44px;
+      }
+
+      .card__textCard2 .card__imgPartbot > img,
+      .card__textCard2 .card__imgParttop > img {
+        width: 21px;
+      }
+
+      .card__textCard2 .card__imgPartbot {
+        top: -73px;
+      }
+
+      .card__textCard3 .card__imgPartbot > img,
+      .card__textCard3 .card__imgParttop > img {
+        width: 11px;
+      }
+
+      .card__textCard3 .card__imgParttop {
+        left: -15px;
+      }
+
+      .card__textCard3 .card__imgPartbot > img {
+        width: 12px;
+      }
+
+      .card__textCard3 .card__imgPartbot {
+        top: -56px;
+        left: 0;
+        right: -36px;
+      }
+
+      .card__textCard4 .card__imgPartbot > img,
+      .card__textCard4 .card__imgParttop > img {
+        width: 16px;
+      }
+
+      .card__textCard4 .card__imgParttop {
+        top: -113px;
+        left: -27px;
+      }
+
+      .card__textCard4 .card__imgPartbot {
+        top: -82px;
+        left: 10px;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <input type="range" min="0" max="5" id="speed" value="1" step="0.01" /> -->
+    <img
+      class="initImg"
+      src="https://reachandtarget-my.sharepoint.com/personal/olga_reachandtarget_com/Documents/%D0%A4%D0%B0%D0%B9%D0%BB%D1%8B%20%D1%87%D0%B0%D1%82%D0%BE%D0%B2%20Microsoft%20Teams/2021-05-26%2023.10.58.jpg"
+      alt=""
+    />
+    <!-- <h1 id="test">1234567890</h1>
+    <h1 id="test2">на спорт!</h1> -->
+    <br />
+    <div class="card">
+      <div class="card__imgWrapper card__imgWrapperLogo">
+        <img src="./1.svg" id="topImg" alt="" class="card__image" />
+      </div>
+      <div class="card__textCard"></div>
+      <img src="./SVG/stavkinasport.svg" alt="" />
+
+      <div class="link">www.europebet.by</div>
+    </div>
+    <script>
+      const link = new Letterize({
+        targets: ".link",
+      });
+
+      const imagesTop = ["1.svg", "2.svg", "3.svg", "4.png", "5.svg"];
+      const imagesBot = [
+        "stavkinasport.svg",
+        "igrayvpoker.svg",
+        "ispitudachy.svg",
+        "tvoeoknorzvl.png",
+      ];
+      const imageTop = document.getElementById("topImg");
+      const topWrapper = document.querySelector('.card__imgWrapper');
+
+      const topTimeLine = anime.timeline({
+        duration: 2500,
+      });
+
+      topTimeLine
+        // .add({
+        //   targets: ".card__imgWrapper",
+        //   translateX: [-150, 0],
+        //   rotate: 360,
+        //   begin: function (anim) {
+        //     imageTop.src = imagesTop[0];
+        //   },
+        // })
+        // .add({
+        //   targets: ".card__imgWrapper",
+        //   translateX: [0, 250],
+        //   rotate: "580deg",
+        //   duration: 1600,
+        //   easing: "easeOutQuart",
+        // })
+        // .add({
+        //   targets: ".card__imgWrapper",
+        //   translateX: [250, 0],
+        //   rotate: "-360deg",
+        //   loopBegin: function (anim) {
+        //     imageTop.src = imagesTop[1];
+        //   },
+        // })
+        // .add({
+        //   targets: ".card__imgWrapper",
+        //   rotate: "360deg",
+        //   update: function (anim) {
+        //     if (Math.abs(Math.round(anim.progress) === 10))
+        //       imageTop.src = imagesTop[2];
+        //   },
+        // })
+        // .add({
+        //   targets: ".card__imgWrapper",
+        //   scale: [1, 0, 1],
+        //   easing: 'easeInOutQuart',
+        //   update: function (anim) {
+        //     if (Math.abs(Math.round(anim.progress) === 60))
+        //       imageTop.src = imagesTop[3];
+        //   },
+        // })
+        .add({
+          targets: ".card__imgWrapper",
+          easing: 'linear',
+          duration:1200,
+          opacity:0,
+          complete: function (anim) {
+            imageTop.src = imagesTop[4];
+            topWrapper.classList.add('card__imgWrapperLogo');
+          },
+        })
+        .add({
+          targets: ".card__imgWrapper",
+          easing: 'linear',
+          delay: 250,
+          begin:function (anim) {
+            imageTop.src = imagesTop[4];
+          },
+          duration:1200,
+          opacity:1,
+        });
+
+      // let changeNumber = 0;
+      // let status = "up";
+      // let numberSlide = 2;
+      // let textAnimationNumber = 0;
+
+      // class TimeMagic {
+      //     constructor(speed) {
+      //         this.accumulateTime = -1;
+      //         this.lastTime = -1;
+      //         this.speed = speed;
+      //     }
+
+      //     updateTime(t) {
+      //         if (this.accumulateTime === -1) {
+      //             this.accumulateTime = t;
+      //         } else {
+      //             const deltaT = t - this.lastTime;
+      //             this.accumulateTime += deltaT * this.speed;
+      //         }
+
+      //         this.lastTime = t;
+      //     }
+
+      //     updateSpeed(speed) {
+      //         this.speed = speed;
+      //     }
+
+      //     getTime() {
+      //         return this.accumulateTime;
+      //     }
+      // }
+
+      // window.setTimeout(() => {
+      //     const timeManager = new TimeMagic(1);
+
+      //     const animation = anime({
+      //         targets: ".card__image",
+      //         easing: "easeInOutSine",
+      //         loop: 4, //4
+      //         direction: "normal",
+      //         autoplay: true,
+      //         duration: 800,
+      //         delay: () => 4000,
+      //         rotate: "1turn",
+      //         update: function(anim) {
+      //             if (Math.round(anim.progress) === 70) {
+      //                 textAnimations[textAnimationNumber].reverse();
+      //                 textAnimations[textAnimationNumber].play();
+      //             }
+
+      //             if (Math.round(anim.currentTime) >= 4400) {
+      //                 if (numberSlide !== 5) {
+      //                     document
+      //                         .querySelector(".card__imgWrapper")
+      //                         .classList.remove("logo");
+
+      //                     document.querySelector(".card__image").src =
+      //                         numberSlide === 4 ?
+      //                         `./${numberSlide}.png` :
+      //                         `./${numberSlide}.svg`;
+      //                 } else {
+      //                     document.querySelector(".card__image").src = "logo.svg";
+      //                     document
+      //                         .querySelector(".card__imgWrapper")
+      //                         .classList.add("logo");
+      //                 }
+      //             }
+      //         },
+      //         complete: function() {
+      //             textAnimations[4].play();
+      //         },
+      //         loopBegin: function() {
+      //             textAnimations[textAnimationNumber].restart();
+      //         },
+      //         loopComplete: function(...test) {
+      //             // textAnimations[textAnimationNumber].reverse();
+      //             // textAnimations[textAnimationNumber].play();
+      //             if (numberSlide === 5) {
+      //                 numberSlide = 1;
+      //             } else {
+      //                 numberSlide++;
+      //             }
+      //             textAnimationNumber++;
+      //             if (textAnimationNumber > 4) {
+      //                 textAnimationNumber = 0;
+      //             }
+      //         },
+      //     });
+      //     // --var3
+      //     const textAnimations = [
+      //         anime({
+      //             targets: [
+      //                 ".card__textCard1 .card__imgParttop img",
+      //                 ".card__textCard1 .card__imgPartbot img",
+      //             ],
+      //             easing: "easeOutQuart",
+      //             autoplay: false,
+      //             duration: 400,
+      //             opacity: [0, 12],
+      //             delay: function(el, i, l) {
+      //                 return i * 50;
+      //             },
+      //             translateX: function(el, index) {
+      //                 return [15, 0];
+      //             },
+      //             translateY: function(el, index) {
+      //                 if (index <= 10) {
+      //                     return [-20, 0];
+      //                 } else {
+      //                     return [20, 0];
+      //                 }
+      //             },
+      //             direction: "easeInOutQuart",
+      //             // delay: 800,
+      //             complete: function(anim) {
+      //                 // textAnimation2.play();
+      //                 // textAnimations[textAnimationNumber].play();
+      //             },
+      //             update: function(anim) {},
+      //         }),
+      //         anime({
+      //             targets: [
+      //                 ".card__textCard2 .card__imgParttop img",
+      //                 ".card__textCard2 .card__imgPartbot img",
+      //             ],
+      //             easing: "easeOutQuart",
+      //             autoplay: false,
+      //             duration: 400,
+      //             opacity: [0, 12],
+      //             delay: function(el, i, l) {
+      //                 return i * 50;
+      //             },
+      //             translateX: function(el, index) {
+      //                 return [15, 0];
+      //             },
+      //             translateY: function(el, index) {
+      //                 if (index <= 4) {
+      //                     return [-10, 0];
+      //                 } else {
+      //                     return [20, 0];
+      //                 }
+      //             },
+      //             direction: "easeInOutQuart",
+      //             // delay: 800,
+      //             complete: function(anim) {
+      //                 // textAnimation2.play();
+      //                 // textAnimations[textAnimationNumber].play();
+      //             },
+      //             update: function(anim) {},
+      //         }),
+      //         anime({
+      //             targets: [
+      //                 ".card__textCard3 .card__imgParttop img",
+      //                 ".card__textCard3 .card__imgPartbot img",
+      //             ],
+      //             easing: "easeOutQuart",
+      //             autoplay: false,
+      //             duration: 200,
+      //             opacity: [0, 12],
+      //             delay: function(el, i, l) {
+      //                 return i * 30;
+      //             },
+      //             translateX: function(el, index) {
+      //                 return [15, 0];
+      //             },
+      //             translateY: function(el, index) {
+      //                 if (index <= 11) {
+      //                     return [-10, 0];
+      //                 } else {
+      //                     return [20, 0];
+      //                 }
+      //             },
+      //             direction: "easeInOutQuart",
+      //             // delay: 800,
+      //             complete: function(anim) {
+      //                 // textAnimation2.play();
+      //                 // textAnimations[textAnimationNumber].play();
+      //             },
+      //             update: function(anim) {
+      //                 console.log("test");
+      //             },
+      //         }),
+      //         anime({
+      //             targets: [
+      //                 ".card__textCard4 .card__imgParttop img",
+      //                 ".card__textCard4 .card__imgPartbot img",
+      //             ],
+      //             easing: "easeOutQuart",
+      //             autoplay: false,
+      //             duration: 400,
+      //             opacity: [0, 12],
+      //             delay: function(el, i, l) {
+      //                 return i * 50;
+      //             },
+      //             translateX: function(el, index) {
+      //                 return [10, 0];
+      //             },
+      //             translateY: function(el, index) {
+      //                 if (index <= 7) {
+      //                     return [-5, 0];
+      //                 } else {
+      //                     return [10, 0];
+      //                 }
+      //             },
+      //             direction: "easeInOutQuart",
+      //             // delay: 800,
+      //             complete: function(anim) {
+      //                 // textAnimation2.play();
+      //                 // textAnimations[textAnimationNumber].play();
+      //             },
+      //             update: function(anim) {},
+      //         }),
+      //         anime({
+      //             targets: ".link span",
+      //             easing: "easeInOutSine",
+      //             autoplay: false,
+      //             duration: 800,
+      //             opacity: [0, 0.6],
+      //             direction: "normal",
+      //             delay: anime.stagger(100),
+      //             translateX: function() {
+      //                 return [anime.random(-50, 50), 0];
+      //             },
+      //             translateY: function() {
+      //                 return [anime.random(-50, 50), 0];
+      //             },
+      //             easing: "easeInOutQuad",
+      //             // endDelay: 1500,
+      //             // endDelay: 5000,
+      //             complete: function(anim) {
+      //                 // textAnimation1.play();
+      //             },
+      //         }),
+      //     ];
+      // });
+    </script>
+  </body>
+</html>
