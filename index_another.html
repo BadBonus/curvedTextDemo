@@ -325,7 +325,7 @@
 
         let topTimeLine = anime.timeline({
             duration: 2500,
-            loop: 3,
+            // loop: 3,
         });
 
         let botTimeLine = anime.timeline({
@@ -337,7 +337,7 @@
             .add({
                 targets: ".card__imgWrapper",
                 opacity: [0, 1],
-                rotate: "1turn",
+                rotate: [0, "3turn"],
                 duration: 1100,
                 easing: "easeOutCirc",
                 endDelay: 3000,
@@ -350,7 +350,7 @@
                 targets: ".card__imgWrapper",
                 // translateX: [250, 0],
                 easing: "linear",
-                rotate: "360deg",
+                rotate: [0, "3turn"],
                 duration: 1000,
                 endDelay: 3000,
                 update: function(anim) {
@@ -361,7 +361,7 @@
             })
             .add({
                 targets: ".card__imgWrapper",
-                rotate: "720deg",
+                rotate: [0, "3turn"],
                 easing: "linear",
                 duration: 1000,
                 endDelay: 3000,
@@ -373,7 +373,7 @@
             })
             .add({
                 targets: ".card__imgWrapper",
-                rotate: "1080deg",
+                rotate: [0, "3turn"],
                 easing: "linear",
                 duration: 1100,
                 endDelay: 3000,
@@ -437,6 +437,7 @@
                 delay: 250,
                 duration: 400,
                 opacity: [1, 0],
+                rotate: [0, 15],
                 changeComplete: function() {
                     imageBot.src = "./SVG/" + imagesBot[1];
                     imageBot.classList.remove("stavkasport");
@@ -462,6 +463,7 @@
                 delay: 500,
                 duration: 400,
                 opacity: [1, 0],
+                rotate: [0, 15],
                 changeComplete: function() {
                     imageBot.src = "./SVG/" + imagesBot[2];
                     imageBot.classList.remove("igrayvpoker");
@@ -487,6 +489,7 @@
                 delay: 700,
                 duration: 400,
                 opacity: [1, 0],
+                rotate: [0, 15],
                 changeComplete: function() {
                     imageBot.src = "./SVG/" + imagesBot[3];
                     imageBot.classList.remove("ispitudachy");
@@ -507,6 +510,7 @@
             .add({
                 targets: "#botImg",
                 opacity: 0,
+                rotate: [0, 15],
                 duration: 600,
                 easing: "linear",
                 delay: 200,
