@@ -339,13 +339,6 @@
                     botTimeLine.restart();
                 },
             })
-            // .add({
-            //     targets: ".card__imgWrapper",
-            //     translateX: [0, 250],
-            //     rotate: "580deg",
-            //     duration: 1600,
-            //     easing: "easeOutQuart",
-            // })
             .add({
                 targets: ".card__imgWrapper",
                 // translateX: [250, 0],
@@ -358,15 +351,12 @@
                         imageTop.src = imagesTop[1];
                     }
                 },
-                // changeBegin: function(anim) {
-                //     ;
-                // },
             })
             .add({
                 targets: ".card__imgWrapper",
                 rotate: "720deg",
                 easing: "linear",
-                duration: 1100,
+                duration: 1000,
                 endDelay: 3000,
                 update: function(anim) {
                     if (Math.abs(Math.round(anim.progress) === 2)) {
@@ -418,76 +408,11 @@
                 duration: 1500,
             });
 
-        // .add({
-        //     targets: ".card__imgWrapper",
-        //     easing: "linear",
-        //     delay: 250,
-        //     endDelay: 3000,
-        //     changeBegin: function(anim) {
-        //         imageTop.src = imagesTop[4];
-        //     },
-        //     duration: 1200,
-        //     opacity: 1,
-        // })
-        // .add({
-        //     targets: ".card__imgWrapper",
-        //     easing: "linear",
-        //     endDelay: 2000,
-        //     opacity: 0,
-        //     changeComplete: function(anim) {
-        //         topWrapper.classList.remove("card__imgWrapperLogo");
-        //         imageTop.src = imagesTop[0];
-        //     },
-        //     duration: 1500,
-        // });
-
-        // .add({
-        //     targets: ".card__imgWrapper",
-        //     scale: [1, 0, 1],
-        //     endDelay: 3000,
-        //     easing: "easeInOutQuart",
-        //     update: function(anim) {
-        //         if (Math.abs(Math.round(anim.progress) === 30)) {
-        //             imageTop.src = imagesTop[3];
-        //         }
-        //     },
-        // })
-        // .add({
-        //     targets: ".card__imgWrapper",
-        //     easing: "linear",
-        //     duration: 1200,
-        //     opacity: 0,
-        //     changeComplete: function() {
-        //         topWrapper.classList.add("card__imgWrapperLogo");
-        //     },
-        // })
-        // .add({
-        //     targets: ".card__imgWrapper",
-        //     easing: "linear",
-        //     delay: 250,
-        //     endDelay: 3000,
-        //     changeBegin: function(anim) {
-        //         imageTop.src = imagesTop[4];
-        //     },
-        //     duration: 1200,
-        //     opacity: 1,
-        // })
-        // .add({
-        //     targets: ".card__imgWrapper",
-        //     easing: "linear",
-        //     endDelay: 2000,
-        //     opacity: 0,
-        //     changeComplete: function(anim) {
-        //         topWrapper.classList.remove("card__imgWrapperLogo");
-        //         imageTop.src = imagesTop[0];
-        //     },
-        //     duration: 1500,
-        // });
-
         botTimeLine
             .add({
                 targets: "#botImg",
                 rotate: [200, 0],
+                delay: 300,
                 duration: 1200,
                 endDelay: 2200,
                 easing: "easeOutCirc",
@@ -497,24 +422,13 @@
                     imageBot.classList.add("stavkasport");
                 },
             })
-            // .add({
-            //     targets: "#botImg",
-            //     translateX: [0, -350],
-            //     delay: 250,
-            //     opacity: [1, 0],
-            //     changeComplete: function() {
-            //         imageBot.src = "./SVG/" + imagesBot[1];
-            //         imageBot.classList.remove("stavkasport");
-            //         imageBot.classList.add("igrayvpoker");
-            //     },
-            // })
             .add({
                 targets: "#botImg",
                 // rotate: 360,
                 // duration: 5000,
                 easing: "easeOutCirc",
                 delay: 250,
-                duration: 800,
+                duration: 400,
                 opacity: [1, 0],
                 changeComplete: function() {
                     imageBot.src = "./SVG/" + imagesBot[1];
@@ -526,18 +440,18 @@
                 targets: "#botImg",
                 rotate: [200, 0],
                 easing: "easeOutCirc",
-                duration: 1200,
+                duration: 1100,
                 delay: 0,
                 endDelay: 2200,
                 opacity: [0, 1],
-            })
+            }, '-=200')
             .add({
                 targets: "#botImg",
                 // rotate: 360,
                 // duration: 5000,
                 easing: "easeOutCirc",
-                delay: 250,
-                duration: 800,
+                delay: 500,
+                duration: 400,
                 opacity: [1, 0],
                 changeComplete: function() {
                     imageBot.src = "./SVG/" + imagesBot[2];
@@ -549,18 +463,18 @@
                 targets: "#botImg",
                 rotate: [200, 0],
                 easing: "easeOutCirc",
-                duration: 1200,
+                duration: 900,
                 delay: 0,
                 endDelay: 2200,
                 opacity: [0, 1],
-            })
+            }, '-=200')
             .add({
                 targets: "#botImg",
                 // rotate: 360,
                 // duration: 5000,
                 easing: "easeOutCirc",
-                delay: 250,
-                duration: 800,
+                delay: 700,
+                duration: 400,
                 opacity: [1, 0],
                 changeComplete: function() {
                     imageBot.src = "./SVG/" + imagesBot[3];
@@ -572,11 +486,11 @@
                 targets: "#botImg",
                 rotate: [200, 0],
                 easing: "easeOutCirc",
-                duration: 1200,
+                duration: 1100,
                 delay: 0,
-                endDelay: 2200,
+                endDelay: 2600,
                 opacity: [0, 1],
-            })
+            }, '-=200')
             .add({
                 targets: "#botImg",
                 opacity: 0,
@@ -599,323 +513,15 @@
                 translateY: function() {
                     return [anime.random(-50, 50), 0];
                 },
-                endDelay: 2500,
+                endDelay: 2700,
             })
             .add({
                 targets: ".link span",
-                easing: "easeInOutSine",
-                duration: 800,
+                easing: "linear",
+                duration: 1400,
                 opacity: [0.6, 0],
                 delay: 0,
             });
-        // .add({
-        //         targets: "#botImg",
-        //         translateX: [0, -350],
-        //         delay: 0,
-        //         opacity: [1, 0],
-        //     },
-        //     "-=500"
-        // )
-        // .add({
-        //         targets: "#botImg",
-        //         translateX: [-350, 0],
-        //         delay: 0,
-        //         endDelay: 0,
-        //         opacity: [0, 1],
-        //         changeBegin: function() {
-        //             imageBot.src = "./SVG/" + imagesBot[2];
-        //             imageBot.classList.remove("igrayvpoker");
-        //             imageBot.classList.add("ispitudachy");
-        //         },
-        //     },
-        //     "-=1600"
-        // )
-        // .add({
-        //     targets: "#botImg",
-        //     translateX: [0, -350],
-        //     delay: 3000,
-        //     opacity: [1, 0],
-        // })
-        // .add({
-        //         targets: "#botImg",
-        //         translateX: [-350, 0],
-        //         delay: 0,
-        //         endDelay: 0,
-        //         opacity: [0, 1],
-        //         changeBegin: function() {
-        //             imageBot.src = "./SVG/" + imagesBot[3];
-        //             imageBot.classList.remove("ispitudachy");
-        //             imageBot.classList.add("tvoeoknorzvl");
-        //         },
-        //     },
-        //     "-=1600"
-        // )
-        // .add({
-        //     targets: "#botImg",
-        //     opacity: 0,
-        //     easing: "linear",
-        //     delay: 600,
-        //     changeComplete: function() {
-        //         imageBot.classList.remove("tvoeoknorzvl");
-        //     },
-        // })
-        // .add({
-        //     targets: ".link span",
-        //     easing: "easeInOutSine",
-        //     duration: 800,
-        //     opacity: [0, 0.6],
-        //     delay: anime.stagger(100),
-        //     translateX: function() {
-        //         return [anime.random(-50, 50), 0];
-        //     },
-        //     translateY: function() {
-        //         return [anime.random(-50, 50), 0];
-        //     },
-        //     endDelay: 2500,
-        // })
-        // .add({
-        //     targets: ".link span",
-        //     easing: "easeInOutSine",
-        //     duration: 800,
-        //     opacity: [0.6, 0],
-        //     delay: 0,
-        // });
-
-        // let changeNumber = 0;
-        // let status = "up";
-        // let numberSlide = 2;
-        // let textAnimationNumber = 0;
-
-        // class TimeMagic {
-        //     constructor(speed) {
-        //         this.accumulateTime = -1;
-        //         this.lastTime = -1;
-        //         this.speed = speed;
-        //     }
-
-        //     updateTime(t) {
-        //         if (this.accumulateTime === -1) {
-        //             this.accumulateTime = t;
-        //         } else {
-        //             const deltaT = t - this.lastTime;
-        //             this.accumulateTime += deltaT * this.speed;
-        //         }
-
-        //         this.lastTime = t;
-        //     }
-
-        //     updateSpeed(speed) {
-        //         this.speed = speed;
-        //     }
-
-        //     getTime() {
-        //         return this.accumulateTime;
-        //     }
-        // }
-
-        // window.setTimeout(() => {
-        //     const timeManager = new TimeMagic(1);
-
-        //     const animation = anime({
-        //         targets: ".card__image",
-        //         easing: "easeInOutSine",
-        //         loop: 4, //4
-        //         direction: "normal",
-        //         autoplay: true,
-        //         duration: 800,
-        //         delay: () => 4000,
-        //         rotate: "1turn",
-        //         update: function(anim) {
-        //             if (Math.round(anim.progress) === 70) {
-        //                 textAnimations[textAnimationNumber].reverse();
-        //                 textAnimations[textAnimationNumber].play();
-        //             }
-
-        //             if (Math.round(anim.currentTime) >= 4400) {
-        //                 if (numberSlide !== 5) {
-        //                     document
-        //                         .querySelector(".card__imgWrapper")
-        //                         .classList.remove("logo");
-
-        //                     document.querySelector(".card__image").src =
-        //                         numberSlide === 4 ?
-        //                         `./${numberSlide}.png` :
-        //                         `./${numberSlide}.svg`;
-        //                 } else {
-        //                     document.querySelector(".card__image").src = "logo.svg";
-        //                     document
-        //                         .querySelector(".card__imgWrapper")
-        //                         .classList.add("logo");
-        //                 }
-        //             }
-        //         },
-        //         complete: function() {
-        //             textAnimations[4].play();
-        //         },
-        //         loopBegin: function() {
-        //             textAnimations[textAnimationNumber].restart();
-        //         },
-        //         loopComplete: function(...test) {
-        //             // textAnimations[textAnimationNumber].reverse();
-        //             // textAnimations[textAnimationNumber].play();
-        //             if (numberSlide === 5) {
-        //                 numberSlide = 1;
-        //             } else {
-        //                 numberSlide++;
-        //             }
-        //             textAnimationNumber++;
-        //             if (textAnimationNumber > 4) {
-        //                 textAnimationNumber = 0;
-        //             }
-        //         },
-        //     });
-        //     // --var3
-        //     const textAnimations = [
-        //         anime({
-        //             targets: [
-        //                 ".card__textCard1 .card__imgParttop img",
-        //                 ".card__textCard1 .card__imgPartbot img",
-        //             ],
-        //             easing: "easeOutQuart",
-        //             autoplay: false,
-        //             duration: 400,
-        //             opacity: [0, 12],
-        //             delay: function(el, i, l) {
-        //                 return i * 50;
-        //             },
-        //             translateX: function(el, index) {
-        //                 return [15, 0];
-        //             },
-        //             translateY: function(el, index) {
-        //                 if (index <= 10) {
-        //                     return [-20, 0];
-        //                 } else {
-        //                     return [20, 0];
-        //                 }
-        //             },
-        //             direction: "easeInOutQuart",
-        //             // delay: 800,
-        //             complete: function(anim) {
-        //                 // textAnimation2.play();
-        //                 // textAnimations[textAnimationNumber].play();
-        //             },
-        //             update: function(anim) {},
-        //         }),
-        //         anime({
-        //             targets: [
-        //                 ".card__textCard2 .card__imgParttop img",
-        //                 ".card__textCard2 .card__imgPartbot img",
-        //             ],
-        //             easing: "easeOutQuart",
-        //             autoplay: false,
-        //             duration: 400,
-        //             opacity: [0, 12],
-        //             delay: function(el, i, l) {
-        //                 return i * 50;
-        //             },
-        //             translateX: function(el, index) {
-        //                 return [15, 0];
-        //             },
-        //             translateY: function(el, index) {
-        //                 if (index <= 4) {
-        //                     return [-10, 0];
-        //                 } else {
-        //                     return [20, 0];
-        //                 }
-        //             },
-        //             direction: "easeInOutQuart",
-        //             // delay: 800,
-        //             complete: function(anim) {
-        //                 // textAnimation2.play();
-        //                 // textAnimations[textAnimationNumber].play();
-        //             },
-        //             update: function(anim) {},
-        //         }),
-        //         anime({
-        //             targets: [
-        //                 ".card__textCard3 .card__imgParttop img",
-        //                 ".card__textCard3 .card__imgPartbot img",
-        //             ],
-        //             easing: "easeOutQuart",
-        //             autoplay: false,
-        //             duration: 200,
-        //             opacity: [0, 12],
-        //             delay: function(el, i, l) {
-        //                 return i * 30;
-        //             },
-        //             translateX: function(el, index) {
-        //                 return [15, 0];
-        //             },
-        //             translateY: function(el, index) {
-        //                 if (index <= 11) {
-        //                     return [-10, 0];
-        //                 } else {
-        //                     return [20, 0];
-        //                 }
-        //             },
-        //             direction: "easeInOutQuart",
-        //             // delay: 800,
-        //             complete: function(anim) {
-        //                 // textAnimation2.play();
-        //                 // textAnimations[textAnimationNumber].play();
-        //             },
-        //             update: function(anim) {
-        //                 console.log("test");
-        //             },
-        //         }),
-        //         anime({
-        //             targets: [
-        //                 ".card__textCard4 .card__imgParttop img",
-        //                 ".card__textCard4 .card__imgPartbot img",
-        //             ],
-        //             easing: "easeOutQuart",
-        //             autoplay: false,
-        //             duration: 400,
-        //             opacity: [0, 12],
-        //             delay: function(el, i, l) {
-        //                 return i * 50;
-        //             },
-        //             translateX: function(el, index) {
-        //                 return [10, 0];
-        //             },
-        //             translateY: function(el, index) {
-        //                 if (index <= 7) {
-        //                     return [-5, 0];
-        //                 } else {
-        //                     return [10, 0];
-        //                 }
-        //             },
-        //             direction: "easeInOutQuart",
-        //             // delay: 800,
-        //             complete: function(anim) {
-        //                 // textAnimation2.play();
-        //                 // textAnimations[textAnimationNumber].play();
-        //             },
-        //             update: function(anim) {},
-        //         }),
-        //         anime({
-        //             targets: ".link span",
-        //             easing: "easeInOutSine",
-        //             autoplay: false,
-        //             duration: 800,
-        //             opacity: [0, 0.6],
-        //             direction: "normal",
-        //             delay: anime.stagger(100),
-        //             translateX: function() {
-        //                 return [anime.random(-50, 50), 0];
-        //             },
-        //             translateY: function() {
-        //                 return [anime.random(-50, 50), 0];
-        //             },
-        //             easing: "easeInOutQuad",
-        //             // endDelay: 1500,
-        //             // endDelay: 5000,
-        //             complete: function(anim) {
-        //                 // textAnimation1.play();
-        //             },
-        //         }),
-        //     ];
-        // });
     </script>
 </body>
 
