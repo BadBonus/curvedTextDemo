@@ -419,6 +419,10 @@
             .add({
                 targets: "#botImg",
                 rotate: [200, 0],
+                translateY: {
+                    value: 0,
+                    duration: 0,
+                },
                 delay: 300,
                 duration: 1200,
                 endDelay: 2200,
@@ -436,8 +440,9 @@
                 easing: "easeOutCirc",
                 delay: 250,
                 duration: 400,
-                opacity: [1, 0],
-                rotate: [0, 15],
+                // opacity: [1, 0],
+                rotate: [0, -45],
+                translateY: [0, 50],
                 changeComplete: function() {
                     imageBot.src = "./SVG/" + imagesBot[1];
                     imageBot.classList.remove("stavkasport");
@@ -452,6 +457,10 @@
                     delay: 0,
                     endDelay: 2200,
                     opacity: [0, 1],
+                    translateY: {
+                        value: 0,
+                        duration: 0,
+                    },
                 },
                 "-=200"
             )
@@ -462,8 +471,9 @@
                 easing: "easeOutCirc",
                 delay: 500,
                 duration: 400,
-                opacity: [1, 0],
-                rotate: [0, 15],
+                // opacity: [1, 0],
+                rotate: [0, -45],
+                translateY: [0, 50],
                 changeComplete: function() {
                     imageBot.src = "./SVG/" + imagesBot[2];
                     imageBot.classList.remove("igrayvpoker");
@@ -474,6 +484,10 @@
                     targets: "#botImg",
                     rotate: [200, 0],
                     easing: "easeOutCirc",
+                    translateY: {
+                        value: 0,
+                        duration: 0,
+                    },
                     duration: 900,
                     delay: 0,
                     endDelay: 2200,
@@ -488,8 +502,10 @@
                 easing: "easeOutCirc",
                 delay: 700,
                 duration: 400,
-                opacity: [1, 0],
-                rotate: [0, 15],
+                // opacity: [1, 0],
+                rotate: [0, -45],
+                translateY: [0, 50],
+
                 changeComplete: function() {
                     imageBot.src = "./SVG/" + imagesBot[3];
                     imageBot.classList.remove("ispitudachy");
@@ -499,6 +515,10 @@
             .add({
                     targets: "#botImg",
                     rotate: [200, 0],
+                    translateY: {
+                        value: 0,
+                        duration: 0,
+                    },
                     easing: "easeOutCirc",
                     duration: 1100,
                     delay: 0,
@@ -509,8 +529,9 @@
             )
             .add({
                 targets: "#botImg",
-                opacity: 0,
-                rotate: [0, 15],
+                // opacity: 0,
+                rotate: [0, -45],
+                translateY: [0, 50],
                 duration: 600,
                 easing: "linear",
                 delay: 200,
