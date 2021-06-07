@@ -47,11 +47,12 @@
         }
         
         .card {
-            overflow: hidden;
             width: 300px;
-            height: 250px;
+            height: 228px;
             background-color: #e84e10;
             position: relative;
+            top: 56px;
+            transform: scale(.7);
         }
         
         .el {
@@ -77,12 +78,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 82px;
+            margin-top: 0;
         }
         
         .card__imgWrapperLogo {
             box-shadow: unset;
             width: 190px;
+            padding-top: 35px;
         }
         
         .initImg {
@@ -297,6 +299,13 @@
             top: -80px;
             /* transform: scale(0.7); */
         }
+        
+        .wrapperBanner {
+            width: 300px;
+            height: 250px;
+            background: #e84e10;
+            position: relative;
+        }
     </style>
     <script src="./anime.js"></script>
     <script src="./letterize.min.js"></script>
@@ -306,16 +315,16 @@
     <!-- <input type="range" min="0" max="5" id="speed" value="1" step="0.01" /> -->
     <!-- <h1 id="test">1234567890</h1>
     <h1 id="test2">на спорт!</h1> -->
-    <br />
-    <div class="card">
-        <div class="cardContentWrapper">
-            <div class="card__imgWrapper">
-                <img src="./1.svg" id="topImg" alt="" class="card__image" />
+    <div class="wrapperBanner">
+        <div class="card">
+            <div class="cardContentWrapper">
+                <div class="card__imgWrapper">
+                    <img src="./1.svg" id="topImg" alt="" class="card__image" />
+                </div>
+                <div class="card__textCard"></div>
+                <img id="botImg" src="./SVG/stavkinasport.svg" alt="" />
             </div>
-            <div class="card__textCard"></div>
-            <img id="botImg" src="./SVG/stavkinasport.svg" alt="" />
         </div>
-
         <div class="link">www.europebet.by</div>
     </div>
     <script>
