@@ -47,13 +47,11 @@
         }
         
         .card {
-            /* overflow: hidden; */
-            width: 336px;
-            height: 229px;
+            overflow: hidden;
+            width: 728px;
+            height: 90px;
             background-color: #e84e10;
             position: relative;
-            transform: scale(0.8);
-            padding-top: 82px;
         }
         
         .el {
@@ -70,21 +68,44 @@
         
         .card__imgWrapper {
             padding: 0;
-            box-shadow: 0 0 11px 0px #fff;
+            box-shadow: none;
             border-radius: 100px;
-            width: 160px;
+            width: 100px !important;
             margin: auto;
             text-align: center;
-            height: 160px;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-top: 0;
+            margin: 0;
+            margin-left: 14px;
         }
         
-        .card__imgWrapperLogo {
+        .card__imgWrapper.img1 img {
+            padding-top: 10px;
+            height: 72px;
+            width: 72px;
+        }
+        
+        .card__imgWrapper.img2 img {
+            padding-top: 10px;
+            height: 62px;
+            width: 62px;
+            padding-left: 10px;
+        }
+        
+        .card__imgWrapper.img3 img {
+            padding-top: 10px;
+            height: 72px;
+            width: 72px;
+        }
+        
+        .card__imgWrapperLogo img {
             box-shadow: unset;
-            width: 190px;
-            padding-top: 35px;
+            height: 100px !important;
+            margin-top: -3px !important;
+            padding-left: 218px !important;
+            width: 222px;
         }
         
         .initImg {
@@ -263,47 +284,55 @@
         }
         
         .stavkasport {
-            width: 208px;
+            /* width: 208px; */
             position: relative;
-            bottom: 16px;
-            left: calc(var(--globalBottomTextLeft) + 11px);
+            /* bottom: 16px; */
+            /* left: calc(var(--globalBottomTextLeft) + 11px); */
         }
         
         .igrayvpoker {
             position: relative;
-            width: 183px;
-            left: calc(var(--globalBottomTextLeft) + 15px);
-            bottom: 14px;
+            /* width: 183px; */
+            /* left: calc(var(--globalBottomTextLeft) + 15px); */
+            /* bottom: 14px; */
         }
         
         .ispitudachy {
-            width: 211px;
-            bottom: 17px;
+            /* width: 211px; */
+            /* bottom: 17px; */
             position: relative;
-            left: calc(var(--globalBottomTextLeft) + 18px);
+            /* left: calc(var(--globalBottomTextLeft) + 18px); */
         }
         
         .tvoeoknorzvl {
-            width: 210px;
+            /* width: 210px; */
             position: relative;
-            left: calc(var(--globalBottomTextLeft) + 14px);
-            bottom: 22px;
+            /* left: calc(var(--globalBottomTextLeft) + 14px); */
+            /* bottom: 22px; */
         }
         
         #botImg {
             transform-origin: 50% -470px;
+            height: 37px;
+            padding-top: 25px;
+            padding-left: 3px;
+        }
+        
+        .cardContentWrapper.reverse #botImg {
+            height: 31.4px;
+            padding-left: 32px;
         }
         
         .cardContentWrapper {
             position: relative;
-            top: -63px;
+            /* top: 35px; */
+            display: flex;
+            /* transform: scale(0.7); */
         }
         
-        .wrapperBanner {
-            position: relative;
-            width: 336px;
-            height: 280px;
-            background-color: #e84e10;
+        .cardContentWrapper.reverse {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
         }
     </style>
     <script src="./anime.js"></script>
@@ -315,29 +344,31 @@
     <!-- <h1 id="test">1234567890</h1>
     <h1 id="test2">на спорт!</h1> -->
     <br />
-    <div class="wrapperBanner">
-        <div class="card">
-            <div class="cardContentWrapper">
-                <div class="card__imgWrapper">
-                    <img src="./SVG/1.svg" id="topImg" alt="" class="card__image" />
-                </div>
-                <div class="card__textCard"></div>
-                <img id="botImg" src="./SVG/stavkinasport.svg" alt="" />
+    <div class="card">
+        <div class="cardContentWrapper">
+            <div class="card__imgWrapper">
+                <img src="./SVG/1.svg" id="topImg" alt="" class="card__image" />
             </div>
+            <div class="card__textCard"></div>
+            <img id="botImg" src="./SVG/txt-1.svg" alt="" />
         </div>
-        <div class="link">www.europebet.by</div>
     </div>
     <script>
         const link = new Letterize({
             targets: ".link",
         });
 
-        const imagesTop = ["./SVG/1.svg", "./SVG/2.svg", "./SVG/3.svg", "./SVG/4.png", "./SVG/5.svg"];
+        const imagesTop = [
+            "./SVG/icon-1-1.svg",
+            "./SVG/icon-2-2.svg",
+            "./SVG/icon-3-3.svg",
+            "./SVG/5_horizontal.svg",
+        ];
         const imagesBot = [
-            "./SVG/stavkinasport.svg",
-            "./SVG/igrayvpoker.svg",
-            "./SVG/ispitudachy.svg",
-            "./SVG/tvoeoknorzvl.svg",
+            "./SVG/txt-1.svg",
+            "./SVG/txt-2.svg",
+            "./SVG/txt-3.svg",
+            "./SVG/txt-4.svg",
         ];
         let imageTop = document.getElementById("topImg");
         let topWrapper = document.querySelector(".card__imgWrapper");
@@ -358,96 +389,108 @@
             .add({
                 targets: ".card__imgWrapper",
                 opacity: [0, 1],
-                rotate: [0, "3turn"],
-                duration: 1100,
-                easing: "easeOutCirc",
-                endDelay: 1750,
+                duration: 900,
+                easing: "easeOutQuart",
+                endDelay: 1300,
                 changeBegin: function(anim) {
                     imageTop.src = imagesTop[0];
+                    topWrapper.classList.add("img1");
                     botTimeLine.restart();
                 },
             })
             .add({
                 targets: ".card__imgWrapper",
-                // translateX: [250, 0],
-                easing: "linear",
-                rotate: [0, "3turn"],
-                duration: 1000,
-                endDelay: 1750,
-                update: function(anim) {
-                    if (Math.abs(Math.round(anim.progress) === 5)) {
-                        imageTop.src = imagesTop[1];
-                    }
+                easing: "easeOutQuart",
+                duration: 500,
+                endDelay: 350,
+                opacity: [1, 0],
+                changeComplete: function(anim) {
+                    topWrapper.classList.remove("img1");
+                    topWrapper.classList.add("img2");
+                    imageTop.src = imagesTop[1];
                 },
+            })
+
+        .add({
+                targets: ".card__imgWrapper",
+                easing: "easeOutQuart",
+                duration: 900,
+                endDelay: 1300,
+                opacity: [0, 1],
+                changeBegin: function() {},
             })
             .add({
                 targets: ".card__imgWrapper",
-                rotate: [0, "3turn"],
-                easing: "linear",
-                duration: 1000,
-                endDelay: 1750,
-                update: function(anim) {
-                    if (Math.abs(Math.round(anim.progress) === 2)) {
-                        imageTop.src = imagesTop[2];
-                    }
+                easing: "easeOutQuart",
+                //   delay: 250,
+                endDelay: 350,
+                changeComplete: function(anim) {
+                    topWrapper.classList.remove("img2");
+                    topWrapper.classList.add("img3");
+                    imageTop.src = imagesTop[2];
                 },
+                duration: 500,
+                opacity: [1, 0],
+            })
+
+        .add({
+                targets: ".card__imgWrapper",
+                easing: "easeOutQuart",
+                duration: 900,
+                endDelay: 1300,
+                opacity: [0, 1],
             })
             .add({
                 targets: ".card__imgWrapper",
-                rotate: [0, "3turn"],
-                easing: "linear",
-                duration: 1100,
-                endDelay: 1750,
-                update: function(anim) {
-                    if (Math.abs(Math.round(anim.progress) === 15)) {
-                        imageTop.src = imagesTop[3];
-                    }
-                },
-            })
-            .add({
-                targets: ".card__imgWrapper",
-                easing: "linear",
-                duration: 1200,
-                opacity: 0,
-                changeComplete: function() {
+                easing: "easeOutQuart",
+                endDelay: 250,
+                duration: 500,
+                changeComplete: function(anim) {
+                    topWrapper.classList.remove("img3");
                     topWrapper.classList.add("card__imgWrapperLogo");
+                    imageTop.src = imagesTop[3];
+                    document
+                        .querySelector(".cardContentWrapper")
+                        .classList.add("reverse");
                 },
+                opacity: [1, 0],
             })
             .add({
                 targets: ".card__imgWrapper",
-                easing: "linear",
-                delay: 250,
-                endDelay: 3000,
-                changeBegin: function(anim) {
-                    imageTop.src = imagesTop[4];
-                },
-                duration: 1200,
-                opacity: 1,
+                // rotate: [0, "3turn"],
+                easing: "easeOutQuart",
+                duration: 900,
+                endDelay: 1200,
+                delay: 950,
+                opacity: [0, 1],
             })
             .add({
                 targets: ".card__imgWrapper",
-                easing: "linear",
-                endDelay: 300,
-                opacity: 0,
+                easing: "easeOutQuart",
+                duration: 500,
+                endDelay: 600,
                 changeComplete: function(anim) {
                     topWrapper.classList.remove("card__imgWrapperLogo");
-                    imageTop.src = imagesTop[0];
+                    document
+                        .querySelector(".cardContentWrapper")
+                        .classList.remove("reverse");
                 },
-                duration: 1500,
+                opacity: [1, 0],
             });
 
+        // BotImages
         botTimeLine
             .add({
                 targets: "#botImg",
-                rotate: [200, 0],
-                translateY: {
-                    value: 0,
-                    duration: 0,
-                },
-                delay: 300,
-                duration: 1200,
-                endDelay: 950,
-                easing: "easeOutCirc",
+                // rotate: [200, 0],
+                // translateY: {
+                //     value: 0,
+                //     duration: 0,
+                // },
+                duration: 900,
+                endDelay: 600,
+                delay: 600,
+                easing: "easeOutQuart",
                 opacity: [0, 1],
                 changeBegin: function() {
                     imageBot.src = imagesBot[0];
@@ -458,12 +501,12 @@
                 targets: "#botImg",
                 // rotate: 360,
                 // duration: 5000,
-                easing: "easeInOutSine",
-                delay: 250,
+                easing: "easeOutQuart",
                 duration: 500,
-                // opacity: [1, 0],
-                rotate: [0, -45],
-                translateY: [0, 50],
+                endDelay: 350,
+                opacity: [1, 0],
+                // rotate: [0, -45],
+                // translateY: [0, 50],
                 changeComplete: function() {
                     imageBot.src = imagesBot[1];
                     imageBot.classList.remove("stavkasport");
@@ -471,30 +514,30 @@
                 },
             })
             .add({
-                    targets: "#botImg",
-                    rotate: [200, 0],
-                    easing: "easeOutCirc",
-                    duration: 1100,
-                    delay: 0,
-                    endDelay: 950,
-                    opacity: [0, 1],
-                    translateY: {
-                        value: 0,
-                        duration: 0,
-                    },
-                },
-                "-=200"
-            )
+                targets: "#botImg",
+                // rotate: [200, 0],
+                opacity: [0, 1],
+                easing: "easeOutQuart",
+                duration: 900,
+                endDelay: 700,
+                delay: 600,
+                opacity: [0, 1],
+                // translateY: {
+                //     value: 0,
+                //     duration: 0,
+                // },
+            })
             .add({
                 targets: "#botImg",
                 // rotate: 360,
                 // duration: 5000,
-                easing: "easeInOutSine",
-                delay: 500,
-                duration: 400,
-                // opacity: [1, 0],
-                rotate: [0, -45],
-                translateY: [0, 50],
+                easing: "easeOutQuart",
+                duration: 500,
+                endDelay: 350,
+                opacity: [1, 0],
+                endDelay: 600,
+                // rotate: [0, -45],
+                // translateY: [0, 50],
                 changeComplete: function() {
                     imageBot.src = imagesBot[2];
                     imageBot.classList.remove("igrayvpoker");
@@ -503,15 +546,15 @@
             })
             .add({
                     targets: "#botImg",
-                    rotate: [200, 0],
-                    easing: "easeOutCirc",
-                    translateY: {
-                        value: 0,
-                        duration: 0,
-                    },
+                    // rotate: [200, 0],
+                    easing: "easeOutQuart",
+                    // translateY: {
+                    //     value: 0,
+                    //     duration: 0,
+                    // },
                     duration: 900,
-                    delay: 0,
-                    endDelay: 950,
+                    endDelay: 700,
+                    delay: 600,
                     opacity: [0, 1],
                 },
                 "-=200"
@@ -520,12 +563,13 @@
                 targets: "#botImg",
                 // rotate: 360,
                 // duration: 5000,
-                easing: "easeInOutSine",
-                delay: 700,
-                duration: 400,
+                easing: "easeOutQuart",
+                duration: 500,
+                opacity: [1, 0],
+                endDelay: 500,
                 // opacity: [1, 0],
-                rotate: [0, -45],
-                translateY: [0, 50],
+                // rotate: [0, -45],
+                // translateY: [0, 50],
 
                 changeComplete: function() {
                     imageBot.src = imagesBot[3];
@@ -534,52 +578,29 @@
                 },
             })
             .add({
-                    targets: "#botImg",
-                    rotate: [200, 0],
-                    translateY: {
-                        value: 0,
-                        duration: 0,
-                    },
-                    easing: "easeOutCirc",
-                    duration: 1100,
-                    delay: 0,
-                    endDelay: 1350,
-                    opacity: [0, 1],
-                },
-                "-=200"
-            )
+                targets: "#botImg",
+                // rotate: [200, 0],
+                // translateY: {
+                //     value: 0,
+                //     duration: 0,
+                // },
+                easing: "easeOutQuart",
+                duration: 900,
+                endDelay: 1900,
+                opacity: [0, 1],
+            })
             .add({
                 targets: "#botImg",
                 // opacity: 0,
-                rotate: [0, -45],
-                translateY: [0, 50],
-                duration: 600,
-                easing: "easeInOutSine",
-                delay: 200,
+                // rotate: [0, -45],
+                // translateY: [0, 50],
+                opacity: [1, 0],
+                endDelay: 350,
+                duration: 500,
+                easing: "easeOutQuart",
                 changeComplete: function() {
                     imageBot.classList.remove("tvoeoknorzvl");
                 },
-            })
-            .add({
-                targets: ".link span",
-                easing: "easeInOutSine",
-                duration: 800,
-                opacity: [0, 1],
-                delay: anime.stagger(100),
-                translateX: function() {
-                    return [anime.random(-50, 50), 0];
-                },
-                translateY: function() {
-                    return [anime.random(-50, 50), 0];
-                },
-                endDelay: 2700,
-            })
-            .add({
-                targets: ".link span",
-                easing: "linear",
-                duration: 1400,
-                opacity: [0.6, 0],
-                delay: 0,
             });
     </script>
 </body>

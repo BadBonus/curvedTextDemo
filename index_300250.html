@@ -319,7 +319,7 @@
         <div class="card">
             <div class="cardContentWrapper">
                 <div class="card__imgWrapper">
-                    <img src="./1.svg" id="topImg" alt="" class="card__image" />
+                    <img src="./SVG/1.svg" id="topImg" alt="" class="card__image" />
                 </div>
                 <div class="card__textCard"></div>
                 <img id="botImg" src="./SVG/stavkinasport.svg" alt="" />
@@ -332,12 +332,12 @@
             targets: ".link",
         });
 
-        const imagesTop = ["1.svg", "2.svg", "3.svg", "4.png", "5.svg"];
+        const imagesTop = ["./SVG/1.svg", "./SVG/2.svg", "./SVG/3.svg", "./SVG/4.png", "./SVG/5.svg"];
         const imagesBot = [
-            "stavkinasport.svg",
-            "igrayvpoker.svg",
-            "ispitudachy.svg",
-            "tvoeoknorzvl.svg",
+            "./SVG/stavkinasport.svg",
+            "./SVG/igrayvpoker.svg",
+            "./SVG/ispitudachy.svg",
+            "./SVG/tvoeoknorzvl.svg",
         ];
         let imageTop = document.getElementById("topImg");
         let topWrapper = document.querySelector(".card__imgWrapper");
@@ -450,7 +450,7 @@
                 easing: "easeOutCirc",
                 opacity: [0, 1],
                 changeBegin: function() {
-                    imageBot.src = "./SVG/" + imagesBot[0];
+                    imageBot.src = imagesBot[0];
                     imageBot.classList.add("stavkasport");
                 },
             })
@@ -465,7 +465,7 @@
                 rotate: [0, -45],
                 translateY: [0, 50],
                 changeComplete: function() {
-                    imageBot.src = "./SVG/" + imagesBot[1];
+                    imageBot.src = imagesBot[1];
                     imageBot.classList.remove("stavkasport");
                     imageBot.classList.add("igrayvpoker");
                 },
@@ -496,7 +496,7 @@
                 rotate: [0, -45],
                 translateY: [0, 50],
                 changeComplete: function() {
-                    imageBot.src = "./SVG/" + imagesBot[2];
+                    imageBot.src = imagesBot[2];
                     imageBot.classList.remove("igrayvpoker");
                     imageBot.classList.add("ispitudachy");
                 },
@@ -528,7 +528,7 @@
                 translateY: [0, 50],
 
                 changeComplete: function() {
-                    imageBot.src = "./SVG/" + imagesBot[3];
+                    imageBot.src = imagesBot[3];
                     imageBot.classList.remove("ispitudachy");
                     imageBot.classList.add("tvoeoknorzvl");
                 },
